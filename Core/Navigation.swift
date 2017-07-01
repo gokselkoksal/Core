@@ -8,41 +8,41 @@
 
 import Foundation
 
-protocol Navigator {
+public protocol Navigator {
     func resolve(_ action: NavigatorAction) -> Navigation?
 }
 
-extension Navigator {
-    func resolve(_ action: Action) -> Navigation? {
+public extension Navigator {
+    public func resolve(_ action: Action) -> Navigation? {
         guard let action = action as? NavigatorAction else { return nil }
         return resolve(action)
     }
 }
 
-protocol Navigation {
+public protocol Navigation {
     typealias Creation = (parent: AnyComponent, component: AnyComponent)
     var creations: [Creation] { get }
     var deletions: [AnyComponent] { get }
 }
 
-protocol NavigationPerformer {
+public protocol NavigationPerformer {
     func perform(_ navigation: Navigation)
 }
 
 // MARK: - Convenience
 
-enum BasicNavigation: Navigation {
+public enum BasicNavigation: Navigation {
     
     case push(AnyComponent, from: AnyComponent)
     case pop(AnyComponent)
     case present(AnyComponent, from: AnyComponent)
     case dismiss(AnyComponent)
     
-    var creations: [Navigation.Creation] {
+    public var creations: [Navigation.Creation] {
         return proposedChanges().creations
     }
     
-    var deletions: [AnyComponent] {
+    public var deletions: [AnyComponent] {
         return proposedChanges().deletions
     }
     

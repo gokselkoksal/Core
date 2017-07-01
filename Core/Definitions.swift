@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol State { }
+public protocol State { }
 
-protocol Action { }
+public protocol Action { }
 
-protocol NavigatorAction: Action { }
+public protocol NavigatorAction: Action { }
 
-protocol Command {
+public protocol Command {
     associatedtype StateType: State
     func execute(on component: Component<StateType>, core: Core)
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SubscriptionManager<StateType: State> {
+internal final class SubscriptionManager<StateType: State> {
     
     private var subscriptionSyncQueue = DispatchQueue(label: "component.subscription.sync")
     private var _subscriptions: [Subscription] = []
@@ -25,23 +25,23 @@ class SubscriptionManager<StateType: State> {
         }
     }
 
-    func subscribe<S: Subscriber>(_ subscriber: S, on queue: DispatchQueue = .main) where S.StateType == StateType {
+    internal func subscribe<S: Subscriber>(_ subscriber: S, on queue: DispatchQueue = .main) where S.StateType == StateType {
         guard !self.subscriptions.contains(where: { $0.subscriber === subscriber }) else { return }
         let subscription = Subscription(subscriber: subscriber, queue: queue)
         self.subscriptions.append(subscription)
     }
     
-    func unsubscribe<S: Subscriber>(_ subscriber: S) where S.StateType == StateType {
+    internal func unsubscribe<S: Subscriber>(_ subscriber: S) where S.StateType == StateType {
         if let subscriptionIndex = subscriptions.index(where: { $0.subscriber === subscriber }) {
             subscriptions.remove(at: subscriptionIndex)
         }
     }
     
-    func publish(_ newState: StateType) {
+    internal func publish(_ newState: StateType) {
         forEachSubscription { $0.notify(with: newState) }
     }
     
-    func publish(_ navigation: Navigation) {
+    internal func publish(_ navigation: Navigation) {
         forEachSubscription { $0.notify(with: navigation) }
     }
     

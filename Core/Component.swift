@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol ComponentNavigationDelegate: class {
+public protocol ComponentNavigationDelegate: class {
     func component(_ component: AnyComponent, willFireNavigation navigation: Navigation)
 }
 
-protocol AnyComponent: class {
+public protocol AnyComponent: class {
     weak var navigationDelegate: ComponentNavigationDelegate? { get set }
     var anyState: State { get }
     func process(_ action: Action)
@@ -20,38 +20,38 @@ protocol AnyComponent: class {
     func commit(_ navigation: Navigation)
 }
 
-class Component<StateType: State>: AnyComponent {
+public class Component<StateType: State>: AnyComponent {
     
-    weak var navigationDelegate: ComponentNavigationDelegate?
+    public weak var navigationDelegate: ComponentNavigationDelegate?
     
-    private(set) var state: StateType
-    var anyState: State { return state }
+    public private(set) var state: StateType
+    public var anyState: State { return state }
     
     private let subscriptionManager = SubscriptionManager<StateType>()
     
-    init(state: StateType) {
+    public init(state: StateType) {
         self.state = state
     }
     
-    func process(_ action: Action) {
+    public func process(_ action: Action) {
         // Should be implemented by subclasses. Does nothing by default.
     }
     
-    func subscribe<S: Subscriber>(_ subscriber: S, on queue: DispatchQueue = .main) where S.StateType == StateType {
+    public final func subscribe<S: Subscriber>(_ subscriber: S, on queue: DispatchQueue = .main) where S.StateType == StateType {
         subscriptionManager.subscribe(subscriber, on: queue)
     }
     
-    func unsubscribe<S: Subscriber>(_ subscriber: S) where S.StateType == StateType {
+    public final func unsubscribe<S: Subscriber>(_ subscriber: S) where S.StateType == StateType {
         subscriptionManager.unsubscribe(subscriber)
     }
     
-    func commit(_ newState: State) {
+    public final func commit(_ newState: State) {
         guard let newState = newState as? StateType else { return }
         self.state = newState
         subscriptionManager.publish(newState)
     }
     
-    func commit(_ navigation: Navigation) {
+    public final func commit(_ navigation: Navigation) {
         navigationDelegate?.component(self, willFireNavigation: navigation)
         subscriptionManager.publish(navigation)
     }

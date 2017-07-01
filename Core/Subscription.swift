@@ -8,34 +8,39 @@
 
 import Foundation
 
-protocol AnySubscriber: class, NavigationPerformer {
+public protocol AnySubscriber: class, NavigationPerformer {
     func _update(with state: State)
 }
 
-protocol Subscriber: AnySubscriber {
+public protocol Subscriber: AnySubscriber {
     associatedtype StateType: State
     func update(with state: StateType)
 }
 
-extension Subscriber {
-    func _update(with state: State) {
+public extension Subscriber {
+    public func _update(with state: State) {
         guard let state = state as? StateType else { return }
         update(with: state)
     }
 }
 
-struct Subscription {
+internal struct Subscription {
     
-    private(set) weak var subscriber: AnySubscriber?
-    let queue: DispatchQueue
+    internal private(set) weak var subscriber: AnySubscriber?
+    private let queue: DispatchQueue
     
-    func notify(with newState: State) {
+    internal init(subscriber: AnySubscriber?, queue: DispatchQueue) {
+        self.subscriber = subscriber
+        self.queue = queue
+    }
+    
+    internal func notify(with newState: State) {
         execute {
             self.subscriber?._update(with: newState)
         }
     }
     
-    func notify(with navigation: Navigation) {
+    internal func notify(with navigation: Navigation) {
         execute {
             self.subscriber?.perform(navigation)
         }

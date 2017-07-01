@@ -8,43 +8,46 @@
 
 import Foundation
 
-final class Core {
+public final class Core {
     
-    let navigationTree: Tree<AnyComponent>
-    private(set) var middlewares: [Middleware]
+    fileprivate let navigationTree: Tree<AnyComponent>
+    fileprivate var middlewares: [Middleware]
     
-    init(rootComponent: AnyComponent, middlewares: [Middleware] = []) {
+    public init(rootComponent: AnyComponent, middlewares: [Middleware] = []) {
         self.navigationTree = Tree(rootComponent, equalityChecker: { $0 === $1 })
         self.middlewares = middlewares
         rootComponent.navigationDelegate = self
     }
     
-    func dispatch(_ action: Action) {
+    public func dispatch(_ action: Action) {
         willProcess(action)
         navigationTree.forEach { $0.process(action) }
         didProcess(action)
     }
     
-    func dispatch<C: Command>(_ command: C) {
+    public func dispatch<C: Command>(_ command: C) {
         navigationTree.forEach { (component) in
             if let specificComponent = component as? Component<C.StateType> {
                 command.execute(on: specificComponent, core: self)
             }
         }
     }
+}
+
+private extension Core {
     
-    private func willProcess(_ action: Action) {
+    func willProcess(_ action: Action) {
         middlewares.forEach { $0.willProcess(action) }
     }
     
-    private func didProcess(_ action: Action) {
+    func didProcess(_ action: Action) {
         middlewares.forEach { $0.didProcess(action) }
     }
 }
 
 extension Core: ComponentNavigationDelegate {
     
-    func component(_ component: AnyComponent, willFireNavigation navigation: Navigation) {
+    public func component(_ component: AnyComponent, willFireNavigation navigation: Navigation) {
         for componentToDelete in navigation.deletions {
             self.navigationTree.remove(componentToDelete)
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Middleware {
+public protocol Middleware {
     func willProcess(_ action: Action)
     func didProcess(_ action: Action)
 }

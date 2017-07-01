@@ -76,7 +76,7 @@ public class Tree<T> {
     }
 }
 
-extension Tree {
+private extension Tree {
     
     static func forEach(on node: Node, _ block: (T) -> Void) {
         block(node.value)
