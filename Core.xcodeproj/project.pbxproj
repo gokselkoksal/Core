@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62170E881F0818BA00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62170E891F0818BB00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62170E8A1F0818BC00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
 		62BB28BE1F07FD2300B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
-		62BB28C01F07FD2300B018AB /* Core-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62BB28C01F07FD2300B018AB /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62BB28DD1F08056D00B018AB /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DB1F08056D00B018AB /* SubscriptionManager.swift */; };
 		62BB28DE1F08056E00B018AB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DC1F08056D00B018AB /* Tree.swift */; };
 		62BB28E51F08057700B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
@@ -20,9 +23,6 @@
 		62BB28EA1F08057700B018AB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E41F08057700B018AB /* Subscription.swift */; };
 		62BB28F91F080FDA00B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28F01F080FDA00B018AB /* Core.framework */; };
 		62BB29151F08101500B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB290C1F08101500B018AB /* Core.framework */; };
-		62BB291C1F08101500B018AB /* Core-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB290E1F08101500B018AB /* Core-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62BB292C1F08108300B018AB /* Core-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB292A1F08108300B018AB /* Core-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62BB293A1F08154D00B018AB /* Core-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB29391F08154D00B018AB /* Core-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62BB293B1F08159000B018AB /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DB1F08056D00B018AB /* SubscriptionManager.swift */; };
 		62BB293C1F08159000B018AB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DC1F08056D00B018AB /* Tree.swift */; };
 		62BB293D1F08159000B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
@@ -79,7 +79,7 @@
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		62BB28AF1F07FD2300B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62BB28B21F07FD2300B018AB /* Core-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-iOS.h"; sourceTree = "<group>"; };
+		62BB28B21F07FD2300B018AB /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		62BB28B31F07FD2300B018AB /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		62BB28B81F07FD2300B018AB /* Core iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28BD1F07FD2300B018AB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
@@ -96,15 +96,12 @@
 		62BB28F81F080FDA00B018AB /* Core macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28FF1F080FDA00B018AB /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		62BB290C1F08101500B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62BB290E1F08101500B018AB /* Core-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-tvOS.h"; sourceTree = "<group>"; };
 		62BB290F1F08101500B018AB /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		62BB29141F08101500B018AB /* Core tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB291B1F08101500B018AB /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		62BB29281F08108300B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62BB292A1F08108300B018AB /* Core-watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Core-watchOS.h"; sourceTree = "<group>"; };
 		62BB292B1F08108300B018AB /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		62BB29371F08152900B018AB /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
-		62BB29391F08154D00B018AB /* Core-macOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Core-macOS.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,10 +237,7 @@
 		62BB29331F08116B00B018AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				62BB28B21F07FD2300B018AB /* Core-iOS.h */,
-				62BB29391F08154D00B018AB /* Core-macOS.h */,
-				62BB290E1F08101500B018AB /* Core-tvOS.h */,
-				62BB292A1F08108300B018AB /* Core-watchOS.h */,
+				62BB28B21F07FD2300B018AB /* Core.h */,
 				62BB28B31F07FD2300B018AB /* Info-iOS.plist */,
 				62BB29371F08152900B018AB /* Info-macOS.plist */,
 				62BB290F1F08101500B018AB /* Info-tvOS.plist */,
@@ -277,7 +271,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BB28C01F07FD2300B018AB /* Core-iOS.h in Headers */,
+				62BB28C01F07FD2300B018AB /* Core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +279,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BB293A1F08154D00B018AB /* Core-macOS.h in Headers */,
+				62170E881F0818BA00241813 /* Core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +287,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BB291C1F08101500B018AB /* Core-tvOS.h in Headers */,
+				62170E891F0818BB00241813 /* Core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +295,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BB292C1F08108300B018AB /* Core-watchOS.h in Headers */,
+				62170E8A1F0818BC00241813 /* Core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
