@@ -10,6 +10,14 @@
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
 		62BB28BE1F07FD2300B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
 		62BB28C01F07FD2300B018AB /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62BB28DD1F08056D00B018AB /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DB1F08056D00B018AB /* SubscriptionManager.swift */; };
+		62BB28DE1F08056E00B018AB /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DC1F08056D00B018AB /* Tree.swift */; };
+		62BB28E51F08057700B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
+		62BB28E61F08057700B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
+		62BB28E71F08057700B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
+		62BB28E81F08057700B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
+		62BB28E91F08057700B018AB /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E31F08057700B018AB /* Navigation.swift */; };
+		62BB28EA1F08057700B018AB /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E41F08057700B018AB /* Subscription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		62BB28B81F07FD2300B018AB /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28BD1F07FD2300B018AB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		62BB28BF1F07FD2300B018AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62BB28DB1F08056D00B018AB /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		62BB28DC1F08056D00B018AB /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		62BB28DF1F08057700B018AB /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		62BB28E01F08057700B018AB /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		62BB28E11F08057700B018AB /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		62BB28E21F08057700B018AB /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		62BB28E31F08057700B018AB /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		62BB28E41F08057700B018AB /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +89,13 @@
 			children = (
 				62BB28B21F07FD2300B018AB /* Core.h */,
 				62BB28B31F07FD2300B018AB /* Info.plist */,
+				62BB28DA1F08055E00B018AB /* Helpers */,
+				62BB28E01F08057700B018AB /* Core.swift */,
+				62BB28DF1F08057700B018AB /* Component.swift */,
+				62BB28E11F08057700B018AB /* Definitions.swift */,
+				62BB28E21F08057700B018AB /* Middleware.swift */,
+				62BB28E31F08057700B018AB /* Navigation.swift */,
+				62BB28E41F08057700B018AB /* Subscription.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -84,6 +107,15 @@
 				62BB28BF1F07FD2300B018AB /* Info.plist */,
 			);
 			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		62BB28DA1F08055E00B018AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				62BB28DB1F08056D00B018AB /* SubscriptionManager.swift */,
+				62BB28DC1F08056D00B018AB /* Tree.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +181,7 @@
 					62BB28AE1F07FD2300B018AB = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R6D3RTDSCX;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					62BB28B71F07FD2300B018AB = {
@@ -198,6 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62BB28DD1F08056D00B018AB /* SubscriptionManager.swift in Sources */,
+				62BB28E51F08057700B018AB /* Component.swift in Sources */,
+				62BB28EA1F08057700B018AB /* Subscription.swift in Sources */,
+				62BB28E91F08057700B018AB /* Navigation.swift in Sources */,
+				62BB28E61F08057700B018AB /* Core.swift in Sources */,
+				62BB28E81F08057700B018AB /* Middleware.swift in Sources */,
+				62BB28E71F08057700B018AB /* Definitions.swift in Sources */,
+				62BB28DE1F08056E00B018AB /* Tree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +365,7 @@
 		62BB28C41F07FD2300B018AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
@@ -336,6 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.gk.Core;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +386,7 @@
 		62BB28C51F07FD2300B018AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
@@ -362,6 +406,7 @@
 		62BB28C71F07FD2300B018AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
 				INFOPLIST_FILE = CoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +419,7 @@
 		62BB28C81F07FD2300B018AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R6D3RTDSCX;
 				INFOPLIST_FILE = CoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +448,7 @@
 				62BB28C51F07FD2300B018AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62BB28C61F07FD2300B018AB /* Build configuration list for PBXNativeTarget "CoreTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +457,7 @@
 				62BB28C81F07FD2300B018AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
