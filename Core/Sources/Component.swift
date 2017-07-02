@@ -20,7 +20,7 @@ public protocol AnyComponent: class {
     func commit(_ navigation: Navigation)
 }
 
-public class Component<StateType: State>: AnyComponent {
+open class Component<StateType: State>: AnyComponent {
     
     public weak var navigationDelegate: ComponentNavigationDelegate?
     
@@ -33,7 +33,7 @@ public class Component<StateType: State>: AnyComponent {
         self.state = state
     }
     
-    public func process(_ action: Action) {
+    open func process(_ action: Action) {
         // Should be implemented by subclasses. Does nothing by default.
     }
     

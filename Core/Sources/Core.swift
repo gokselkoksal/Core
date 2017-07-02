@@ -10,7 +10,7 @@ import Foundation
 
 public final class Core {
     
-    fileprivate let navigationTree: Tree<AnyComponent>
+    public let navigationTree: Tree<AnyComponent>
     fileprivate var middlewares: [Middleware]
     
     public init(rootComponent: AnyComponent, middlewares: [Middleware] = []) {
