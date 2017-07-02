@@ -36,7 +36,6 @@ class OTPComponent: Component<OTPState> {
             switch action {
             case .setLoading(let isLoading):
                 state.isLoading = isLoading
-                print(isLoading)
             case .setError(let error):
                 state.error = error
             }
