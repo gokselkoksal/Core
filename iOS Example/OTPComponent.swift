@@ -22,8 +22,15 @@ struct OTPState: State {
 
 class OTPComponent: Component<OTPState> {
     
-    init() {
+    let service: OTPService
+    
+    init(service: OTPService) {
+        self.service = service
         super.init(state: OTPState())
+    }
+    
+    func commandToRequestOTP(withPhoneNumber phoneNumber: String) -> RequestOTPCommand {
+        return RequestOTPCommand(service: service, phoneNumber: phoneNumber)
     }
     
     override func process(_ action: Action) {
@@ -36,26 +43,27 @@ class OTPComponent: Component<OTPState> {
         case .setError(let error):
             state.error = error
         case .otpSent:
-            commit(BasicNavigation.push(LoginComponent(), from: self))
+            let component = LoginComponent(service: service)
+            commit(BasicNavigation.push(component, from: self))
             return
         }
         commit(state)
     }
 }
 
-class SendOTPCommand: Command {
+class RequestOTPCommand: Command {
     
+    let service: OTPService
     let phoneNumber: String
     
-    init(phoneNumber: String) {
+    init(service: OTPService, phoneNumber: String) {
+        self.service = service
         self.phoneNumber = phoneNumber
     }
     
     func execute(on component: Component<OTPState>, core: Core) {
-        // Mocking:
         core.dispatch(OTPAction.setLoading(true))
-        let deadline = DispatchTime.now() + DispatchTimeInterval.seconds(1)
-        DispatchQueue.main.asyncAfter(deadline: deadline) { 
+        service.requestOTP { (result) in
             core.dispatch(OTPAction.setLoading(false))
             core.dispatch(OTPAction.otpSent)
         }

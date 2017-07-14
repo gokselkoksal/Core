@@ -61,6 +61,9 @@
 		62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* iOSExampleCore.swift */; };
 		8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */; };
 		8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */; };
+		8FD9EEF81F1905120051CEFD /* iOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */; };
+		8FD9EEFA1F1905120051CEFD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
+		8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EF021F1905F40051CEFD /* OTPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 62BB28AE1F07FD2300B018AB;
 			remoteInfo = "Core iOS";
+		};
+		8FD9EEFB1F1905120051CEFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62BB28A61F07FD2300B018AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62BB28AE1F07FD2300B018AB;
+			remoteInfo = "Core iOS";
+		};
+		8FD9EF001F19051E0051CEFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62BB28A61F07FD2300B018AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 62C85DEB1F0979B1005B60BA;
+			remoteInfo = "iOS Example";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -135,6 +152,10 @@
 		62C85E021F097C93005B60BA /* iOSExampleCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleCore.swift; sourceTree = "<group>"; };
 		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		8FD9EEF51F1905120051CEFD /* iOS Example Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Example Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSExampleTests.swift; sourceTree = "<group>"; };
+		8FD9EEF91F1905120051CEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD9EF021F1905F40051CEFD /* OTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +218,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FD9EEF21F1905120051CEFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FD9EEFA1F1905120051CEFD /* Core.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -206,6 +235,7 @@
 				62BB28B11F07FD2300B018AB /* Core */,
 				62BB28BC1F07FD2300B018AB /* CoreTests */,
 				62C85DED1F0979B1005B60BA /* iOS Example */,
+				8FD9EEF61F1905120051CEFD /* iOS Example Tests */,
 				62BB28B01F07FD2300B018AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -221,6 +251,7 @@
 				62BB29141F08101500B018AB /* Core tvOS Tests.xctest */,
 				62BB29281F08108300B018AB /* Core.framework */,
 				62C85DEC1F0979B1005B60BA /* iOS Example.app */,
+				8FD9EEF51F1905120051CEFD /* iOS Example Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +343,7 @@
 				62C85DEE1F0979B1005B60BA /* AppDelegate.swift */,
 				62C85E021F097C93005B60BA /* iOSExampleCore.swift */,
 				622180EC1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift */,
+				8FD9EF021F1905F40051CEFD /* OTPService.swift */,
 				62C85E001F097C63005B60BA /* OTPComponent.swift */,
 				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
 				62859B421F0984000040A059 /* LoginComponent.swift */,
@@ -324,6 +356,15 @@
 				62C85DFA1F0979B1005B60BA /* Info.plist */,
 			);
 			path = "iOS Example";
+			sourceTree = "<group>";
+		};
+		8FD9EEF61F1905120051CEFD /* iOS Example Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */,
+				8FD9EEF91F1905120051CEFD /* Info.plist */,
+			);
+			path = "iOS Example Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +549,25 @@
 			productReference = 62C85DEC1F0979B1005B60BA /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8FD9EEF41F1905120051CEFD /* iOS Example Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FD9EEFD1F1905120051CEFD /* Build configuration list for PBXNativeTarget "iOS Example Tests" */;
+			buildPhases = (
+				8FD9EEF11F1905120051CEFD /* Sources */,
+				8FD9EEF21F1905120051CEFD /* Frameworks */,
+				8FD9EEF31F1905120051CEFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FD9EEFC1F1905120051CEFD /* PBXTargetDependency */,
+				8FD9EF011F19051E0051CEFD /* PBXTargetDependency */,
+			);
+			name = "iOS Example Tests";
+			productName = "iOS Example Tests";
+			productReference = 8FD9EEF51F1905120051CEFD /* iOS Example Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -559,6 +619,12 @@
 						DevelopmentTeam = R6D3RTDSCX;
 						ProvisioningStyle = Automatic;
 					};
+					8FD9EEF41F1905120051CEFD = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R6D3RTDSCX;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 62C85DEB1F0979B1005B60BA;
+					};
 				};
 			};
 			buildConfigurationList = 62BB28A91F07FD2300B018AB /* Build configuration list for PBXProject "Core" */;
@@ -582,6 +648,7 @@
 				62BB29131F08101500B018AB /* Core tvOS Tests */,
 				62BB29271F08108300B018AB /* Core watchOS */,
 				62C85DEB1F0979B1005B60BA /* iOS Example */,
+				8FD9EEF41F1905120051CEFD /* iOS Example Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -643,6 +710,13 @@
 				62C85DF91F0979B1005B60BA /* LaunchScreen.storyboard in Resources */,
 				62C85DF61F0979B1005B60BA /* Assets.xcassets in Resources */,
 				62C85DF41F0979B1005B60BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FD9EEF31F1905120051CEFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,8 +818,17 @@
 				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
 				62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */,
+				8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */,
 				622180ED1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift in Sources */,
 				62859B431F0984000040A059 /* LoginComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FD9EEF11F1905120051CEFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FD9EEF81F1905120051CEFD /* iOSExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +854,16 @@
 			isa = PBXTargetDependency;
 			target = 62BB28AE1F07FD2300B018AB /* Core iOS */;
 			targetProxy = 62C85DFE1F0979C3005B60BA /* PBXContainerItemProxy */;
+		};
+		8FD9EEFC1F1905120051CEFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62BB28AE1F07FD2300B018AB /* Core iOS */;
+			targetProxy = 8FD9EEFB1F1905120051CEFD /* PBXContainerItemProxy */;
+		};
+		8FD9EF011F19051E0051CEFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 62C85DEB1F0979B1005B60BA /* iOS Example */;
+			targetProxy = 8FD9EF001F19051E0051CEFD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1192,6 +1285,36 @@
 			};
 			name = Release;
 		};
+		8FD9EEFE1F1905120051CEFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R6D3RTDSCX;
+				INFOPLIST_FILE = "iOS Example Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Example.app/iOS Example";
+			};
+			name = Debug;
+		};
+		8FD9EEFF1F1905120051CEFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = R6D3RTDSCX;
+				INFOPLIST_FILE = "iOS Example Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Example.app/iOS Example";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1275,6 +1398,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8FD9EEFD1F1905120051CEFD /* Build configuration list for PBXNativeTarget "iOS Example Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FD9EEFE1F1905120051CEFD /* Debug */,
+				8FD9EEFF1F1905120051CEFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

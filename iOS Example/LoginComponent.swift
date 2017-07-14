@@ -23,8 +23,15 @@ struct LoginState: State {
 
 class LoginComponent: Component<LoginState> {
     
-    init() {
+    let service: OTPService
+    
+    init(service: OTPService) {
+        self.service = service
         super.init(state: LoginState())
+    }
+    
+    func commandToVerifyOTP(withCode code: String) -> VerifyOTPCommand {
+        return VerifyOTPCommand(service: service, code: code)
     }
     
     override func process(_ action: Action) {
@@ -65,21 +72,21 @@ class LoginComponent: Component<LoginState> {
     }
 }
 
-class SubmitOTPCommand: Command {
+class VerifyOTPCommand: Command {
     
+    let service: OTPService
     let code: String
     
-    init(code: String) {
+    init(service: OTPService, code: String) {
+        self.service = service
         self.code = code
     }
     
     func execute(on component: Component<LoginState>, core: Core) {
-        // Mocking:
         core.dispatch(LoginAction.setLoading(true))
-        let deadline = DispatchTime.now() + DispatchTimeInterval.seconds(1)
-        DispatchQueue.main.asyncAfter(deadline: deadline) { 
+        service.verifyOTP { (result) in
             core.dispatch(LoginAction.setLoading(false))
-            core.dispatch(LoginAction.setResult(.success()))
+            core.dispatch(LoginAction.setResult(result))
         }
     }
 }
