@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func logoutTapped() {
-        core.dispatch(HomeNavigatorAction.logout)
+        core.dispatch(HomeAction.logout)
     }
 }
 

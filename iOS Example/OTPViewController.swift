@@ -36,7 +36,8 @@ class OTPViewController: UIViewController {
     }
     
     @IBAction func sendOTPTapped(_ sender: UIButton) {
-        core.dispatch(SendOTPCommand(phoneNumber: phoneNumberField.text!))
+        guard let phoneNumber = phoneNumberField.text else { return }
+        core.dispatch(SendOTPCommand(phoneNumber: phoneNumber))
     }
 }
 

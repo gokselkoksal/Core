@@ -9,14 +9,7 @@
 import Foundation
 
 public protocol Navigator {
-    func resolve(_ action: NavigatorAction) -> Navigation?
-}
-
-public extension Navigator {
-    public func resolve(_ action: Action) -> Navigation? {
-        guard let action = action as? NavigatorAction else { return nil }
-        return resolve(action)
-    }
+    func resolve(_ action: Action) -> Navigation?
 }
 
 public protocol Navigation {

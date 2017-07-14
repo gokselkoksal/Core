@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-enum HomeNavigatorAction: NavigatorAction {
+enum HomeAction: Action {
     case logout
 }
 
@@ -22,14 +22,13 @@ class HomeComponent: Component<HomeState> {
     }
     
     override func process(_ action: Action) {
-        if let navigatorAction = action as? HomeNavigatorAction {
-            switch navigatorAction {
-            case .logout:
-                let login = self.parent!
-                let otp = login.parent!
-                commit(BasicNavigation.pop([login, otp]))
-                return
-            }
+        guard let action = action as? HomeAction else { return }
+        switch action {
+        case .logout:
+            let login = self.parent!
+            let otp = login.parent!
+            commit(BasicNavigation.pop([login, otp]))
+            return
         }
     }
 }

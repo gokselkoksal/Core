@@ -12,9 +12,6 @@ import Core
 enum OTPAction: Action {
     case setLoading(Bool)
     case setError(Error)
-}
-
-enum OTPNavigatorAction: NavigatorAction {
     case otpSent
 }
 
@@ -30,24 +27,19 @@ class OTPComponent: Component<OTPState> {
     }
     
     override func process(_ action: Action) {
-        if let action = action as? OTPAction {
-            var state = self.state
-            state.error = nil
-            switch action {
-            case .setLoading(let isLoading):
-                state.isLoading = isLoading
-            case .setError(let error):
-                state.error = error
-            }
-            commit(state)
+        guard let action = action as? OTPAction else { return }
+        var state = self.state
+        state.error = nil
+        switch action {
+        case .setLoading(let isLoading):
+            state.isLoading = isLoading
+        case .setError(let error):
+            state.error = error
+        case .otpSent:
+            commit(BasicNavigation.push(LoginComponent(), from: self))
+            return
         }
-        
-        if let action = action as? OTPNavigatorAction {
-            switch action {
-            case .otpSent:
-                commit(BasicNavigation.push(LoginComponent(), from: self))
-            }
-        }
+        commit(state)
     }
 }
 
@@ -65,7 +57,7 @@ class SendOTPCommand: Command {
         let deadline = DispatchTime.now() + DispatchTimeInterval.seconds(1)
         DispatchQueue.main.asyncAfter(deadline: deadline) { 
             core.dispatch(OTPAction.setLoading(false))
-            core.dispatch(OTPNavigatorAction.otpSent)
+            core.dispatch(OTPAction.otpSent)
         }
     }
 }
