@@ -59,6 +59,8 @@
 		62C85DF91F0979B1005B60BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */; };
 		62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E001F097C63005B60BA /* OTPComponent.swift */; };
 		62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* iOSExampleCore.swift */; };
+		8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */; };
+		8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		62C85DFA1F0979B1005B60BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62C85E001F097C63005B60BA /* OTPComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPComponent.swift; sourceTree = "<group>"; };
 		62C85E021F097C93005B60BA /* iOSExampleCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleCore.swift; sourceTree = "<group>"; };
+		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,8 @@
 				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
 				62859B421F0984000040A059 /* LoginComponent.swift */,
 				62859B401F0983F40040A059 /* LoginViewController.swift */,
+				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
+				8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */,
 				62C85DF21F0979B1005B60BA /* Main.storyboard */,
 				62C85DF51F0979B1005B60BA /* Assets.xcassets */,
 				62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */,
@@ -732,8 +738,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				62C85DF11F0979B1005B60BA /* OTPViewController.swift in Sources */,
+				8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */,
 				62C85DEF1F0979B1005B60BA /* AppDelegate.swift in Sources */,
 				62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */,
+				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
 				62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */,
 				622180ED1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift in Sources */,

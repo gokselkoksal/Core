@@ -16,8 +16,13 @@ extension NavigationPerformer where Self: UIViewController {
         switch navigation {
         case .push(let destination, from: _):
             guard let navigationController = navigationController else { return }
+            var vc: UIViewController?
             if let destination = destination as? LoginComponent {
-                let vc = LoginViewController.instantiate(with: destination)
+                vc = LoginViewController.instantiate(with: destination)
+            } else if let destination = destination as? HomeComponent {
+                vc = HomeViewController.instantiate(with: destination)
+            }
+            if let vc = vc {
                 navigationController.pushViewController(vc, animated: true)
             }
         case .pop(let components):

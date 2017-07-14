@@ -51,6 +51,9 @@ class LoginComponent: Component<LoginState> {
         case .setResult(let result):
             state.timerStatus = .finished
             state.result = result
+            commit(state)
+            commit(BasicNavigation.push(HomeComponent(), from: self))
+            return
         }
         commit(state)
     }
