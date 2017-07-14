@@ -15,12 +15,16 @@ extension NavigationPerformer where Self: UIViewController {
         guard let navigation = navigation as? BasicNavigation else { return }
         switch navigation {
         case .push(let destination, from: _):
+            guard let navigationController = navigationController else { return }
             if let destination = destination as? LoginComponent {
                 let vc = LoginViewController.instantiate(with: destination)
-                navigationController?.pushViewController(vc, animated: true)
+                navigationController.pushViewController(vc, animated: true)
             }
-        case .pop(_):
-            navigationController?.popViewController(animated: true)
+        case .pop(let components):
+            guard let navigationController = navigationController else { return }
+            let allViewControllers = navigationController.viewControllers
+            let viewControllers = Array(allViewControllers.dropLast(components.count))
+            navigationController.setViewControllers(viewControllers, animated: true)
         default:
             // Not needed for now.
             break

@@ -44,7 +44,7 @@ class LoginComponent: Component<LoginState> {
                 } catch {
                     state.result = .failure(error)
                     commit(state)
-                    commit(BasicNavigation.pop(self))
+                    commit(BasicNavigation.pop([self]))
                     return
                 }
             }

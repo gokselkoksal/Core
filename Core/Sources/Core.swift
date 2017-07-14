@@ -53,6 +53,7 @@ extension Core: ComponentNavigationDelegate {
         }
         for (parent, newComponent) in navigation.creations {
             newComponent.navigationDelegate = self
+            newComponent.parent = parent
             if self.navigationTree.search(newComponent) == nil {
                 self.navigationTree.search(parent)?.add(newComponent)
             }

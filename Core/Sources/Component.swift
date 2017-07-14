@@ -14,6 +14,7 @@ public protocol ComponentNavigationDelegate: class {
 
 public protocol AnyComponent: class {
     weak var navigationDelegate: ComponentNavigationDelegate? { get set }
+    weak var parent: AnyComponent? { get set }
     var anyState: State { get }
     func process(_ action: Action)
     func commit(_ newState: State)
@@ -23,6 +24,7 @@ public protocol AnyComponent: class {
 open class Component<StateType: State>: AnyComponent {
     
     public weak var navigationDelegate: ComponentNavigationDelegate?
+    public weak var parent: AnyComponent?
     
     public private(set) var state: StateType
     public var anyState: State { return state }

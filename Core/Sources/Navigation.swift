@@ -34,7 +34,7 @@ public protocol NavigationPerformer {
 public enum BasicNavigation: Navigation {
     
     case push(AnyComponent, from: AnyComponent)
-    case pop(AnyComponent)
+    case pop([AnyComponent])
     case present(AnyComponent, from: AnyComponent)
     case dismiss(AnyComponent)
     
@@ -52,8 +52,8 @@ public enum BasicNavigation: Navigation {
         switch self {
         case .push(let component, from: let parent):
             creations.append((parent, component))
-        case .pop(let component):
-            deletions.append(component)
+        case .pop(let components):
+            deletions.append(contentsOf: components)
         case .present(let component, from: let parent):
             creations.append((parent, component))
         case .dismiss(let component):
