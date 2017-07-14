@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
+        core.dispatch(LoginAction.tick) // Activate with first tick.
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             core.dispatch(LoginAction.tick)
         }
@@ -40,6 +41,8 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         component.unsubscribe(self)
+        timer?.invalidate()
+        timer = nil
     }
 
     @IBAction func submitTapped(_ sender: UIButton) {

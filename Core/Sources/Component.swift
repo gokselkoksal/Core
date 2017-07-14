@@ -40,6 +40,7 @@ open class Component<StateType: State>: AnyComponent {
     }
     
     public final func subscribe<S: Subscriber>(_ subscriber: S, on queue: DispatchQueue = .main) where S.StateType == StateType {
+        subscriber._update(with: state)
         subscriptionManager.subscribe(subscriber, on: queue)
     }
     
