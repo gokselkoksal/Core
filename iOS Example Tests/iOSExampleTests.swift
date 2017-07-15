@@ -12,12 +12,15 @@ import Core
 
 class iOSExampleTests: XCTestCase {
     
-    func testExample() {
+    func testLoginFlow() {
         let otpService = MockOTPService(delay: nil)
         let otpComponent = OTPComponent(service: otpService)
         let core = Core(rootComponent: otpComponent)
         
-        core.dispatch(otpComponent.commandToRequestOTP(withPhoneNumber: "XXXX"))
+        // Request OTP:
+        core.dispatch(otpComponent.commandToRequestOTP(withPhoneNumber: "+905309998877"))
+        
+        // Check if login component is pushed:
         var stack = core.navigationTree.flatten()
         XCTAssertEqual(stack.count, 2)
         XCTAssert(stack[0] === otpComponent)
@@ -25,16 +28,15 @@ class iOSExampleTests: XCTestCase {
             XCTFail("Login component must be available.")
             return
         }
+        
+        // Check if timer is working on login component:
         core.dispatch(LoginAction.tick)
-        switch loginComponent.state.timerStatus {
-        case .active(seconds: let seconds):
-            XCTAssertEqual(seconds, 60)
-        default:
-            XCTFail("Timer seconds should be equal to 60 after first tick.")
-        }
+        XCTAssertEqual(loginComponent.state.timerStatus, TimerStatus.active(seconds: 60))
         
-        core.dispatch(loginComponent.commandToVerifyOTP(withCode: "XXXX"))
+        // Verify OTP:
+        core.dispatch(loginComponent.commandToVerifyOTP(withCode: "6754"))
         
+        // Check if OTP verified successfully:
         if let loginResult = loginComponent.state.result {
             switch loginResult {
             case .failure(_):
@@ -46,6 +48,7 @@ class iOSExampleTests: XCTestCase {
             XCTFail("Login state should not be nil.")
         }
         
+        // Check if home component is pushed:
         stack = core.navigationTree.flatten()
         XCTAssertEqual(stack.count, 3)
         XCTAssert(stack[0] === otpComponent)

@@ -122,3 +122,19 @@ enum TimerStatus {
         }
     }
 }
+
+extension TimerStatus: Equatable {
+    
+    static func ==(a: TimerStatus, b: TimerStatus) -> Bool {
+        switch (a, b) {
+        case (.idle, .idle):
+            return true
+        case (.active(let seconds1), .active(let seconds2)):
+            return seconds1 == seconds2
+        case (.finished, .finished):
+            return true
+        default:
+            return false
+        }
+    }
+}
