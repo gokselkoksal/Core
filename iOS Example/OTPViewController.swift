@@ -17,7 +17,7 @@ class OTPViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "OTP"
+        title = "Login"
         phoneNumberField.text = "+90530999XXXX"
     }
     
@@ -45,8 +45,13 @@ extension OTPViewController: Subscriber {
     
     func update(with state: OTPState) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = state.isLoading
-        if let error = state.error {
-            print(error) // TODO: Alert.
+        if let result = state.result {
+            switch result {
+            case .failure(let error):
+                print(error) // TODO: Alert.
+            default:
+                break
+            }
         }
     }
 }

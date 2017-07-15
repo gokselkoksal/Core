@@ -11,13 +11,12 @@ import Core
 
 enum OTPAction: Action {
     case setLoading(Bool)
-    case setError(Error)
-    case otpSent
+    case setResult(Result<Void>)
 }
 
 struct OTPState: State {
     var isLoading = false
-    var error: Error? = nil
+    var result: Result<Void>?
 }
 
 class OTPComponent: Component<OTPState> {
@@ -36,16 +35,20 @@ class OTPComponent: Component<OTPState> {
     override func process(_ action: Action) {
         guard let action = action as? OTPAction else { return }
         var state = self.state
-        state.error = nil
         switch action {
         case .setLoading(let isLoading):
             state.isLoading = isLoading
-        case .setError(let error):
-            state.error = error
-        case .otpSent:
-            let component = LoginComponent(service: service)
-            commit(BasicNavigation.push(component, from: self))
-            return
+        case .setResult(let result):
+            state.result = result
+            switch result {
+            case .success():
+                let component = LoginComponent(service: service)
+                commit(state)
+                commit(BasicNavigation.push(component, from: self))
+                return
+            default:
+                break
+            }
         }
         commit(state)
     }
@@ -65,7 +68,7 @@ class RequestOTPCommand: Command {
         core.dispatch(OTPAction.setLoading(true))
         service.requestOTP { (result) in
             core.dispatch(OTPAction.setLoading(false))
-            core.dispatch(OTPAction.otpSent)
+            core.dispatch(OTPAction.setResult(result))
         }
     }
 }
