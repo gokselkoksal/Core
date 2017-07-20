@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func submitTapped(_ sender: UIButton) {
         guard let code = otpTextField.text else { return }
-        core.dispatch(component.commandToVerifyOTP(withCode: code))
+        core.dispatch(LoginAction.verifyOTP(code))
     }
 }
 

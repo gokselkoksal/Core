@@ -10,9 +10,8 @@ import Foundation
 import Core
 
 enum LoginAction: Action {
-    case setLoading(Bool)
     case tick
-    case setResult(Result<Void>)
+    case verifyOTP(String)
 }
 
 struct LoginState: State {
@@ -30,63 +29,50 @@ class LoginComponent: Component<LoginState> {
         super.init(state: LoginState())
     }
     
-    func commandToVerifyOTP(withCode code: String) -> VerifyOTPCommand {
-        return VerifyOTPCommand(service: service, code: code)
-    }
-    
     override func process(_ action: Action) {
         guard let action = action as? LoginAction else { return }
-        var state = self.state
-        state.result = nil
         switch action {
-        case .setLoading(let isLoading):
-            state.isLoading = isLoading
         case .tick:
-            switch state.timerStatus {
-            case .idle:
-                state.timerStatus = .active(seconds: 60)
-            default:
-                do {
-                    try state.timerStatus.tick()
-                } catch {
-                    state.result = .failure(error)
-                    commit(state)
-                    commit(BasicNavigation.pop([self]))
-                    return
-                }
-            }
-        case .setResult(let result):
-            state.timerStatus = .finished
-            state.result = result
-            switch result {
-            case .success():
-                commit(state)
-                commit(BasicNavigation.push(HomeComponent(), from: self))
+            tick()
+        case .verifyOTP(let code):
+            verifyOTP(code)
+        }
+    }
+    
+    private func tick() {
+        var state = self.state
+        switch state.timerStatus {
+        case .idle:
+            state.timerStatus = .active(seconds: 60)
+        default:
+            do {
+                try state.timerStatus.tick()
+            } catch {
+                state.result = .failure(error)
+                commit(state, BasicNavigation.pop([self]))
                 return
-            case .failure(let error):
-                print(error)
-                commit(state)
             }
         }
         commit(state)
     }
-}
-
-class VerifyOTPCommand: Command {
     
-    let service: OTPService
-    let code: String
-    
-    init(service: OTPService, code: String) {
-        self.service = service
-        self.code = code
-    }
-    
-    func execute(on component: Component<LoginState>, core: Core) {
-        core.dispatch(LoginAction.setLoading(true))
-        service.verifyOTP { (result) in
-            core.dispatch(LoginAction.setLoading(false))
-            core.dispatch(LoginAction.setResult(result))
+    private func verifyOTP(_ code: String) {
+        var state = self.state
+        state.isLoading = true
+        commit(state)
+        service.verifyOTP { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            state.isLoading = false
+            state.timerStatus = .finished
+            state.result = result
+            switch result {
+            case .success():
+                let navigation = BasicNavigation.push(HomeComponent(), from: strongSelf)
+                strongSelf.commit(state, navigation)
+            case .failure(let error):
+                print(error)
+                strongSelf.commit(state)
+            }
         }
     }
 }

@@ -58,4 +58,9 @@ open class Component<StateType: State>: AnyComponent {
         navigationDelegate?.component(self, willFireNavigation: navigation)
         subscriptionManager.publish(navigation)
     }
+    
+    public final func commit(_ newState: State, _ navigation: Navigation) {
+        commit(newState)
+        commit(navigation)
+    }
 }

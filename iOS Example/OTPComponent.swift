@@ -10,8 +10,7 @@ import Foundation
 import Core
 
 enum OTPAction: Action {
-    case setLoading(Bool)
-    case setResult(Result<Void>)
+    case requestOTP(phoneNumber: String)
 }
 
 struct OTPState: State {
@@ -28,47 +27,30 @@ class OTPComponent: Component<OTPState> {
         super.init(state: OTPState())
     }
     
-    func commandToRequestOTP(withPhoneNumber phoneNumber: String) -> RequestOTPCommand {
-        return RequestOTPCommand(service: service, phoneNumber: phoneNumber)
-    }
-    
     override func process(_ action: Action) {
         guard let action = action as? OTPAction else { return }
-        var state = self.state
         switch action {
-        case .setLoading(let isLoading):
-            state.isLoading = isLoading
-        case .setResult(let result):
+        case .requestOTP(phoneNumber: let phoneNumber):
+            requestOTP(toPhoneNumber: phoneNumber)
+        }
+    }
+    
+    private func requestOTP(toPhoneNumber phoneNumber: String) {
+        var state = self.state
+        state.isLoading = true
+        commit(state)
+        service.requestOTP { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            state.isLoading = false
             state.result = result
             switch result {
             case .success():
-                let component = LoginComponent(service: service)
-                commit(state)
-                commit(BasicNavigation.push(component, from: self))
-                return
+                let component = LoginComponent(service: strongSelf.service)
+                let navigation = BasicNavigation.push(component, from: strongSelf)
+                strongSelf.commit(state, navigation)
             default:
-                break
+                strongSelf.commit(state)
             }
-        }
-        commit(state)
-    }
-}
-
-class RequestOTPCommand: Command {
-    
-    let service: OTPService
-    let phoneNumber: String
-    
-    init(service: OTPService, phoneNumber: String) {
-        self.service = service
-        self.phoneNumber = phoneNumber
-    }
-    
-    func execute(on component: Component<OTPState>, core: Core) {
-        core.dispatch(OTPAction.setLoading(true))
-        service.requestOTP { (result) in
-            core.dispatch(OTPAction.setLoading(false))
-            core.dispatch(OTPAction.setResult(result))
         }
     }
 }
