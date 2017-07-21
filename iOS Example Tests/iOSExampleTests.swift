@@ -18,7 +18,7 @@ class iOSExampleTests: XCTestCase {
         let core = Core(rootComponent: otpComponent)
         
         // Request OTP:
-        core.dispatch(otpComponent.commandToRequestOTP(withPhoneNumber: "+905309998877"))
+        core.dispatch(OTPAction.requestOTP(phoneNumber: "+905309998877"))
         
         // Check if login component is pushed:
         var stack = core.navigationTree.flatten()
@@ -34,7 +34,7 @@ class iOSExampleTests: XCTestCase {
         XCTAssertEqual(loginComponent.state.timerStatus, TimerStatus.active(seconds: 60))
         
         // Verify OTP:
-        core.dispatch(loginComponent.commandToVerifyOTP(withCode: "6754"))
+        core.dispatch(LoginAction.verifyOTP("6754"))
         
         // Check if OTP verified successfully:
         if let loginResult = loginComponent.state.result {
