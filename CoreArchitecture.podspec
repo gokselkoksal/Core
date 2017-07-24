@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "CoreArc"
+  s.name         = "CoreArchitecture"
   s.version      = "0.0.1"
   s.summary      = "Starter kit for Core architecture."
   s.description  = <<-DESC
