@@ -115,6 +115,7 @@
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		622180EC1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleNavigationPerformer.swift; sourceTree = "<group>"; };
+		627912E21F26A04F0013195A /* Core.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Core.podspec; sourceTree = SOURCE_ROOT; };
 		62859B401F0983F40040A059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		62859B421F0984000040A059 /* LoginComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
 		62BB28AF1F07FD2300B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +302,7 @@
 		62BB29321F08116500B018AB /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				627912E21F26A04F0013195A /* Core.podspec */,
 				621BC7811F0816DA00AB5D33 /* LICENSE.txt */,
 				621BC7821F0816DA00AB5D33 /* README.md */,
 			);
@@ -1406,6 +1408,7 @@
 				8FD9EEFF1F1905120051CEFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
