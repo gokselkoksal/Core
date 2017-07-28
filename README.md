@@ -1,5 +1,12 @@
 # Core
 
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/v/CoreArchitecture.svg?style=flat)](http://cocoapods.org/pods/CoreArchitecture)
+[![CI Status](http://img.shields.io/travis/gokselkoksal/Core.svg?style=flat)](https://travis-ci.org/gokselkoksal/Core)
+[![Platform](https://img.shields.io/cocoapods/p/CoreArchitecture.svg?style=flat)](http://cocoadocs.org/docsets/CoreArchitecture)
+[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](http://swift.org)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/gokselkoksal/Lightning/blob/master/LICENSE.txt)
+
 Core helps you design applications in a way that the app flow is driven by business layer, instead of UI layer. It also promotes unidirectional data flow between components for consistency, high testability and powerful debugging.
 
 ## Design
