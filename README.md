@@ -70,10 +70,30 @@ class CountdownComponent: Component<CountdownState> {
 }
 ```
 
-More complex examples: 
-- **Level 2 implementation**: <insert_link>
-- **Level 3 implementation**: <insert_link>
+For a more complex example, check [iOS Example](https://github.com/gokselkoksal/Core/tree/master/iOS%20Example) target in this repo.
 
 ## Alternatives
 
 You can also check out [ReSwift](https://github.com/ReSwift/ReSwift), [Reactor](https://github.com/ReactorSwift/Reactor) or [Dispatch](https://github.com/alexdrone/Dispatch) for pure Redux and Flux implementations for Swift.
+
+## Installation
+
+### Using [CocoaPods](https://github.com/CocoaPods/CocoaPods)
+Add the following line to your `Podfile`:
+```
+pod 'CoreArchitecture'
+```
+
+### Using [Carthage](https://github.com/Carthage/Carthage)
+Add the following line to your `Cartfile`:
+```
+github "gokselkoksal/Core"
+```
+
+### Manually
+Drag and drop `Sources` folder to your project. 
+
+*It's highly recommended to use a dependency manager like `CocoaPods` or `Carthage`.*
+
+## License
+Core is available under the [MIT license](https://github.com/gokselkoksal/Core/blob/master/LICENSE.txt).
