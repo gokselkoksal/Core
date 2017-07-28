@@ -151,6 +151,7 @@
 		62C85DFA1F0979B1005B60BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62C85E001F097C63005B60BA /* OTPComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPComponent.swift; sourceTree = "<group>"; };
 		62C85E021F097C93005B60BA /* iOSExampleCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleCore.swift; sourceTree = "<group>"; };
+		8F2052EC1F2B7DA200462C19 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
 		8FD9EEF51F1905120051CEFD /* iOS Example Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Example Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +303,7 @@
 		62BB29321F08116500B018AB /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				8F2052EC1F2B7DA200462C19 /* .travis.yml */,
 				627912E21F26A04F0013195A /* CoreArchitecture.podspec */,
 				621BC7811F0816DA00AB5D33 /* LICENSE.txt */,
 				621BC7821F0816DA00AB5D33 /* README.md */,
