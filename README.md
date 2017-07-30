@@ -76,8 +76,9 @@ class CountdownComponent: Component<CountdownState> {
   }
 }
 ```
-
-For a more complex example, check [iOS Example](https://github.com/gokselkoksal/Core/tree/master/iOS%20Example) target in this repo.
+More complex examples:
+- Level 2 Sample: [iOS Example](https://github.com/gokselkoksal/Core/tree/master/iOS%20Example)
+- Level 3 Sample: [Movies](https://github.com/gokselkoksal/Movies/tree/core)
 
 ## Installation
 
