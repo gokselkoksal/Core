@@ -9,6 +9,8 @@
 
 Core helps you design applications in a way that the app flow is driven by business layer, instead of UI layer. It also promotes unidirectional data flow between components for consistency, high testability and powerful debugging.
 
+**Related Article**: [Architecting iOS Apps with "Core"](https://medium.com/@gokselkoksal/architecting-ios-apps-with-core-a7d769196b0a)
+
 ## Design
 
 ![Class Diagram](https://github.com/gokselkoksal/Core/blob/master/Core-Diagram.png)
