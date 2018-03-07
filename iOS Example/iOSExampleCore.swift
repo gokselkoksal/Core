@@ -8,4 +8,4 @@
 
 import Core
 
-let core = Core(rootComponent: OTPComponent(service: MockOTPService(delay: 1.5, result: .success())))
+let core = Core(rootComponent: OTPComponent(service: MockOTPService(delay: 1.5, result: .success)))

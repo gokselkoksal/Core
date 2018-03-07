@@ -18,7 +18,7 @@ class MockOTPService: OTPService {
     private let delay: TimeInterval?
     private let result: Result<Void>
     
-    init(delay: TimeInterval?, result: Result<Void> = .success()) {
+    init(delay: TimeInterval?, result: Result<Void> = .success) {
         self.delay = delay
         self.result = result
     }

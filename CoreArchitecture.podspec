@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CoreArchitecture"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "Starter kit for Core architecture."
   s.description  = <<-DESC
                     Core helps you design applications in a way that the app
