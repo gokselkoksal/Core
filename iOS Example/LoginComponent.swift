@@ -84,6 +84,10 @@ enum Result<Value> {
     case failure(Error)
 }
 
+extension Result where Value == Void {
+    static let success: Result<Void> = .success(())
+}
+
 enum TimerStatus {
     
     enum Error: Swift.Error {
