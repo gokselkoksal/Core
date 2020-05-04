@@ -11,16 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  private let window: UIWindow = UIWindow(frame: UIScreen.main.bounds)
-  
+  var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     let component = core.navigationTree.root.value as! OTPComponent
     let viewController = OTPViewController.instantiate(with: component)
     let navigationController = UINavigationController(rootViewController: viewController)
-    window.rootViewController = navigationController
-    window.makeKeyAndVisible()
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = navigationController
+    window?.makeKeyAndVisible()
     return true
   }
   
