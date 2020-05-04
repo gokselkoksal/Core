@@ -10,7 +10,7 @@
 		62170E881F0818BA00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62170E891F0818BB00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62170E8A1F0818BC00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		622180ED1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622180EC1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift */; };
+		622180ED1F0998BB00C2303C /* NavigationPerformer+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622180EC1F0998BB00C2303C /* NavigationPerformer+UIKit.swift */; };
 		62859B411F0983F40040A059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B401F0983F40040A059 /* LoginViewController.swift */; };
 		62859B431F0984000040A059 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B421F0984000040A059 /* LoginComponent.swift */; };
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
@@ -58,7 +58,7 @@
 		62C85DF61F0979B1005B60BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF51F0979B1005B60BA /* Assets.xcassets */; };
 		62C85DF91F0979B1005B60BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */; };
 		62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E001F097C63005B60BA /* OTPComponent.swift */; };
-		62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* iOSExampleCore.swift */; };
+		62C85E031F097C93005B60BA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* Environment.swift */; };
 		8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */; };
 		8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */; };
 		8FD9EEF81F1905120051CEFD /* iOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */; };
@@ -114,7 +114,7 @@
 /* Begin PBXFileReference section */
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		622180EC1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleNavigationPerformer.swift; sourceTree = "<group>"; };
+		622180EC1F0998BB00C2303C /* NavigationPerformer+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NavigationPerformer+UIKit.swift"; sourceTree = "<group>"; };
 		627912E21F26A04F0013195A /* CoreArchitecture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreArchitecture.podspec; sourceTree = SOURCE_ROOT; };
 		62859B401F0983F40040A059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		62859B421F0984000040A059 /* LoginComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		62C85DF81F0979B1005B60BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62C85DFA1F0979B1005B60BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62C85E001F097C63005B60BA /* OTPComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPComponent.swift; sourceTree = "<group>"; };
-		62C85E021F097C93005B60BA /* iOSExampleCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSExampleCore.swift; sourceTree = "<group>"; };
+		62C85E021F097C93005B60BA /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		8F2052EC1F2B7DA200462C19 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
@@ -231,6 +231,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		629FD21C2460755A00E8AEA8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				629FD21E246075A500E8AEA8 /* Login */,
+				629FD21D2460759C00E8AEA8 /* OTP */,
+				629FD21F246075AB00E8AEA8 /* Home */,
+				62C85E021F097C93005B60BA /* Environment.swift */,
+				622180EC1F0998BB00C2303C /* NavigationPerformer+UIKit.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		629FD21D2460759C00E8AEA8 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9EF021F1905F40051CEFD /* OTPService.swift */,
+				62C85E001F097C63005B60BA /* OTPComponent.swift */,
+				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		629FD21E246075A500E8AEA8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				62859B421F0984000040A059 /* LoginComponent.swift */,
+				62859B401F0983F40040A059 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		629FD21F246075AB00E8AEA8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
+				8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		62BB28A51F07FD2300B018AB = {
 			isa = PBXGroup;
 			children = (
@@ -345,15 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				62C85DEE1F0979B1005B60BA /* AppDelegate.swift */,
-				62C85E021F097C93005B60BA /* iOSExampleCore.swift */,
-				622180EC1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift */,
-				8FD9EF021F1905F40051CEFD /* OTPService.swift */,
-				62C85E001F097C63005B60BA /* OTPComponent.swift */,
-				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
-				62859B421F0984000040A059 /* LoginComponent.swift */,
-				62859B401F0983F40040A059 /* LoginViewController.swift */,
-				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
-				8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */,
+				629FD21C2460755A00E8AEA8 /* Scenes */,
 				62C85DF21F0979B1005B60BA /* Main.storyboard */,
 				62C85DF51F0979B1005B60BA /* Assets.xcassets */,
 				62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */,
@@ -579,13 +611,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = GK;
 				TargetAttributes = {
 					62BB28AE1F07FD2300B018AB = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R6D3RTDSCX;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					62BB28B71F07FD2300B018AB = {
@@ -627,13 +659,13 @@
 					62C85DEB1F0979B1005B60BA = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R6D3RTDSCX;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					8FD9EEF41F1905120051CEFD = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R6D3RTDSCX;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 62C85DEB1F0979B1005B60BA;
 					};
@@ -641,7 +673,7 @@
 			};
 			buildConfigurationList = 62BB28A91F07FD2300B018AB /* Build configuration list for PBXProject "Core" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -829,9 +861,9 @@
 				62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */,
 				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
-				62C85E031F097C93005B60BA /* iOSExampleCore.swift in Sources */,
+				62C85E031F097C93005B60BA /* Environment.swift in Sources */,
 				8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */,
-				622180ED1F0998BB00C2303C /* iOSExampleNavigationPerformer.swift in Sources */,
+				622180ED1F0998BB00C2303C /* NavigationPerformer+UIKit.swift in Sources */,
 				62859B431F0984000040A059 /* LoginComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -913,6 +945,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -920,6 +953,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -977,6 +1011,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -984,6 +1019,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1035,7 +1071,7 @@
 				PRODUCT_NAME = "$(inherited)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1053,7 +1089,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.gk.Core;
 				PRODUCT_NAME = "$(inherited)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1262,7 +1298,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1275,7 +1311,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1288,7 +1324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Example.app/iOS Example";
 			};
 			name = Debug;
@@ -1302,7 +1338,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.gk.iOS-Example-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOS Example.app/iOS Example";
 			};
 			name = Release;

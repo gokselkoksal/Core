@@ -13,8 +13,8 @@ public protocol ComponentNavigationDelegate: class {
 }
 
 public protocol AnyComponent: class {
-    weak var navigationDelegate: ComponentNavigationDelegate? { get set }
-    weak var parent: AnyComponent? { get set }
+    var navigationDelegate: ComponentNavigationDelegate? { get set }
+    var parent: AnyComponent? { get set }
     var anyState: State { get }
     func process(_ action: Action)
     func commit(_ newState: State)

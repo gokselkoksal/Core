@@ -18,7 +18,7 @@ public protocol Subscriber: AnySubscriber {
 }
 
 public extension Subscriber {
-    public func _update(with state: State) {
+    func _update(with state: State) {
         guard let state = state as? StateType else { return }
         update(with: state)
     }

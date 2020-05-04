@@ -32,7 +32,7 @@ internal final class SubscriptionManager<StateType: State> {
     }
     
     internal func unsubscribe<S: Subscriber>(_ subscriber: S) where S.StateType == StateType {
-        if let subscriptionIndex = subscriptions.index(where: { $0.subscriber === subscriber }) {
+        if let subscriptionIndex = subscriptions.firstIndex(where: { $0.subscriber === subscriber }) {
             subscriptions.remove(at: subscriptionIndex)
         }
     }

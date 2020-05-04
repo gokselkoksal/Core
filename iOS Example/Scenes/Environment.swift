@@ -1,5 +1,5 @@
 //
-//  iOSExampleCore.swift
+//  Environment.swift
 //  Core
 //
 //  Created by Göksel Köksal on 02/07/2017.

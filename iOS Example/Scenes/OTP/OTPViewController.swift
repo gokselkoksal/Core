@@ -13,7 +13,7 @@ class OTPViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberField: UITextField!
     
-    var component: OTPComponent! = core.navigationTree.root.value as! OTPComponent
+    var component: OTPComponent! = core.navigationTree.root.value as? OTPComponent
  
     override func viewDidLoad() {
         super.viewDidLoad()

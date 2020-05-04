@@ -67,7 +67,7 @@ public class Tree<T> {
         let equalityChecker = equalityChecker ?? defaultEqualityChecker
         let node = search(value, equalityChecker: equalityChecker)
         if let parent = node?.parent {
-            if let index = parent.children.index(where: { equalityChecker($0.value, value) }) {
+            if let index = parent.children.firstIndex(where: { equalityChecker($0.value, value) }) {
                 parent.children.remove(at: index)
                 return true
             }
