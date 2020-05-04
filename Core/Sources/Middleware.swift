@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol Middleware {
-    func willProcess(_ action: Action)
-    func didProcess(_ action: Action)
+  func willProcess(_ action: Action)
+  func didProcess(_ action: Action)
 }

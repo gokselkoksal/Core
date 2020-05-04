@@ -10,47 +10,47 @@ import UIKit
 import Core
 
 class HomeViewController: UIViewController {
+  
+  var component: HomeComponent!
+  
+  static func instantiate(with component: HomeComponent) -> HomeViewController {
+    let vc = HomeViewController()
+    vc.component = component
+    return vc
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = "Home"
+    view.backgroundColor = .white
+    let logoutButton = UIBarButtonItem(
+      title: "Logout",
+      style: .plain,
+      target: self,
+      action: #selector(logoutTapped)
+    )
+    navigationItem.leftBarButtonItem = logoutButton
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    component.subscribe(self)
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    component.unsubscribe(self)
     
-    var component: HomeComponent!
-    
-    static func instantiate(with component: HomeComponent) -> HomeViewController {
-        let vc = HomeViewController()
-        vc.component = component
-        return vc
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Home"
-        view.backgroundColor = .white
-        let logoutButton = UIBarButtonItem(
-            title: "Logout",
-            style: .plain,
-            target: self,
-            action: #selector(logoutTapped)
-        )
-        navigationItem.leftBarButtonItem = logoutButton
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        component.subscribe(self)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        component.unsubscribe(self)
-        
-    }
-    
-    @objc private func logoutTapped() {
-        core.dispatch(HomeAction.logout)
-    }
+  }
+  
+  @objc private func logoutTapped() {
+    core.dispatch(HomeAction.logout)
+  }
 }
 
 extension HomeViewController: Subscriber {
-    
-    func update(with state: HomeState) {
-        // Update...
-    }
+  
+  func update(with state: HomeState) {
+    // Update...
+  }
 }

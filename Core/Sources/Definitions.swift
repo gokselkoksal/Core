@@ -13,6 +13,6 @@ public protocol State { }
 public protocol Action { }
 
 public protocol Command {
-    associatedtype StateType: State
-    func execute(on component: Component<StateType>, core: Core)
+  associatedtype StateType: State
+  func execute(on component: Component<StateType>, core: Core)
 }

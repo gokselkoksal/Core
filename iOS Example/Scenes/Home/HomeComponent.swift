@@ -10,25 +10,25 @@ import Foundation
 import Core
 
 enum HomeAction: Action {
-    case logout
+  case logout
 }
 
 struct HomeState: State { }
 
 class HomeComponent: Component<HomeState> {
-    
-    init() {
-        super.init(state: HomeState())
+  
+  init() {
+    super.init(state: HomeState())
+  }
+  
+  override func process(_ action: Action) {
+    guard let action = action as? HomeAction else { return }
+    switch action {
+    case .logout:
+      let login = self.parent!
+      let otp = login.parent!
+      commit(BasicNavigation.pop([login, otp]))
+      return
     }
-    
-    override func process(_ action: Action) {
-        guard let action = action as? HomeAction else { return }
-        switch action {
-        case .logout:
-            let login = self.parent!
-            let otp = login.parent!
-            commit(BasicNavigation.pop([login, otp]))
-            return
-        }
-    }
+  }
 }
