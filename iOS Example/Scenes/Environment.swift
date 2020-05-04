@@ -8,4 +8,9 @@
 
 import Core
 
-let core = Core(rootComponent: OTPComponent(service: MockOTPService(delay: 1.5, result: .success)))
+let core = Core(rootComponent: OTPComponent(service: env.otpService))
+let env = Environment()
+
+final class Environment {
+  public let otpService = MockOTPService(delay: 1.5, result: .success)
+}

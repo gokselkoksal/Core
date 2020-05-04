@@ -13,7 +13,14 @@ class OTPViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberField: UITextField!
     
-    var component: OTPComponent! = core.navigationTree.root.value as? OTPComponent
+    var component: OTPComponent!
+  
+    static func instantiate(with component: OTPComponent) -> OTPViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! OTPViewController
+        vc.component = component
+        return vc
+    }
  
     override func viewDidLoad() {
         super.viewDidLoad()
