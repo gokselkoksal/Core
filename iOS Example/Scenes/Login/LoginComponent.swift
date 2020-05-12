@@ -49,7 +49,8 @@ class LoginComponent: Component<LoginState> {
         try state.timerStatus.tick()
       } catch {
         state.result = .failure(error)
-        commit(state, BasicNavigation.pop([self]))
+        commit(state)
+        print("pop back")
         return
       }
     }
@@ -67,8 +68,8 @@ class LoginComponent: Component<LoginState> {
       state.result = result
       switch result {
       case .success():
-        let navigation = BasicNavigation.push(HomeComponent(), from: strongSelf)
-        strongSelf.commit(state, navigation)
+        strongSelf.commit(state)
+        print("push home")
       case .failure(let error):
         print(error)
         strongSelf.commit(state)

@@ -8,7 +8,7 @@
 
 import Core
 
-let core = Core(rootComponent: OTPComponent(service: env.otpService))
+let dispatcher = Core()
 let env = Environment()
 
 final class Environment {

@@ -14,12 +14,16 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var otpTextField: UITextField!
   
-  var component: LoginComponent!
-  var timer: Timer?
+  var dispatcher: Dispatcher!
+  var component: AnyComponent<LoginState>!
+  private var stateSubscription: SubscriptionProtocol?
   
-  static func instantiate(with component: LoginComponent) -> LoginViewController {
+  private var timer: Timer?
+  
+  static func instantiate(with dispatcher: Dispatcher, component: AnyComponent<LoginState>) -> LoginViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! LoginViewController
+    vc.dispatcher = dispatcher
     vc.component = component
     return vc
   }
@@ -27,31 +31,28 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Login"
-    core.dispatch(LoginAction.tick) // Activate with first tick.
-    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-      core.dispatch(LoginAction.tick)
+    
+    stateSubscription = component.subscribe(on: .main) { [weak self] (state) in
+      self?.update(with: state)
     }
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    component.subscribe(self)
+    component.start(with: dispatcher)
+    
+    dispatcher.dispatch(LoginAction.tick) // Activate with first tick.
+    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+      self.dispatcher.dispatch(LoginAction.tick)
+    }
   }
   
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    component.unsubscribe(self)
     timer?.invalidate()
     timer = nil
   }
   
   @IBAction func submitTapped(_ sender: UIButton) {
     guard let code = otpTextField.text else { return }
-    core.dispatch(LoginAction.verifyOTP(code))
+    dispatcher.dispatch(LoginAction.verifyOTP(code))
   }
-}
-
-extension LoginViewController: Subscriber {
   
   func update(with state: LoginState) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = state.isLoading

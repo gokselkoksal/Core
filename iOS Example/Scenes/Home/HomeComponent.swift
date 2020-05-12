@@ -25,10 +25,7 @@ class HomeComponent: Component<HomeState> {
     guard let action = action as? HomeAction else { return }
     switch action {
     case .logout:
-      let login = self.parent!
-      let otp = login.parent!
-      commit(BasicNavigation.pop([login, otp]))
-      return
+      print("logout")
     }
   }
 }

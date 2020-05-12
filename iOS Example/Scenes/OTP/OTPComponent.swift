@@ -40,16 +40,15 @@ class OTPComponent: Component<OTPState> {
     state.isLoading = true
     commit(state)
     service.requestOTP { [weak self] (result) in
-      guard let strongSelf = self else { return }
+      guard let self = self else { return }
       state.isLoading = false
       state.result = result
       switch result {
       case .success():
-        let component = LoginComponent(service: strongSelf.service)
-        let navigation = BasicNavigation.push(component, from: strongSelf)
-        strongSelf.commit(state, navigation)
+        self.commit(state)
+        print("push login")
       default:
-        strongSelf.commit(state)
+        self.commit(state)
       }
     }
   }

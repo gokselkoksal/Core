@@ -13,11 +13,14 @@ class OTPViewController: UIViewController {
   
   @IBOutlet weak var phoneNumberField: UITextField!
   
-  var component: OTPComponent!
+  var dispatcher: Dispatcher!
+  var component: AnyComponent<OTPState>!
+  private var stateSubscription: SubscriptionProtocol?
   
-  static func instantiate(with component: OTPComponent) -> OTPViewController {
+  static func instantiate(with dispatcher: Dispatcher, component: AnyComponent<OTPState>) -> OTPViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! OTPViewController
+    vc.dispatcher = dispatcher
     vc.component = component
     return vc
   }
@@ -26,29 +29,17 @@ class OTPViewController: UIViewController {
     super.viewDidLoad()
     title = "Login"
     phoneNumberField.text = "+90530999XXXX"
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    component.subscribe(self)
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    component.unsubscribe(self)
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+    
+    component.start(with: dispatcher)
+    stateSubscription = component.subscribe { [weak self] (state) in
+      self?.update(with: state)
+    }
   }
   
   @IBAction func sendOTPTapped(_ sender: UIButton) {
     guard let phoneNumber = phoneNumberField.text else { return }
-    core.dispatch(OTPAction.requestOTP(phoneNumber: phoneNumber))
+    dispatcher.dispatch(OTPAction.requestOTP(phoneNumber: phoneNumber))
   }
-}
-
-extension OTPViewController: Subscriber {
   
   func update(with state: OTPState) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = state.isLoading

@@ -11,7 +11,9 @@ import Core
 
 class HomeViewController: UIViewController {
   
+  var dispatcher: Dispatcher!
   var component: HomeComponent!
+  private var stateSubscription: SubscriptionProtocol?
   
   static func instantiate(with component: HomeComponent) -> HomeViewController {
     let vc = HomeViewController()
@@ -30,25 +32,15 @@ class HomeViewController: UIViewController {
       action: #selector(logoutTapped)
     )
     navigationItem.leftBarButtonItem = logoutButton
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    component.subscribe(self)
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    component.unsubscribe(self)
-    
+    stateSubscription = component.subscribe(on: .main) { [weak self] (state) in
+      self?.update(with: state)
+    }
+    component.start(with: dispatcher)
   }
   
   @objc private func logoutTapped() {
-    core.dispatch(HomeAction.logout)
+    dispatcher.dispatch(HomeAction.logout)
   }
-}
-
-extension HomeViewController: Subscriber {
   
   func update(with state: HomeState) {
     // Update...
