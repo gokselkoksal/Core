@@ -9,21 +9,21 @@
 import Foundation
 
 protocol OTPService {
-  func requestOTP(completion: @escaping (Result<Void>) -> Void)
-  func verifyOTP(completion: @escaping (Result<Void>) -> Void)
+  func requestOTP(completion: @escaping (Result<Void, Error>) -> Void)
+  func verifyOTP(completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 class MockOTPService: OTPService {
   
   private let delay: TimeInterval?
-  private let result: Result<Void>
+  private let result: Result<Void, Error>
   
-  init(delay: TimeInterval?, result: Result<Void> = .success) {
+  init(delay: TimeInterval?, result: Result<Void, Error> = .success) {
     self.delay = delay
     self.result = result
   }
   
-  func requestOTP(completion: @escaping (Result<Void>) -> Void) {
+  func requestOTP(completion: @escaping (Result<Void, Error>) -> Void) {
     if let delay = delay {
       let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(delay * 1000))
       DispatchQueue.main.asyncAfter(deadline: deadline) { [weak self] in
@@ -35,7 +35,7 @@ class MockOTPService: OTPService {
     }
   }
   
-  func verifyOTP(completion: @escaping (Result<Void>) -> Void) {
+  func verifyOTP(completion: @escaping (Result<Void, Error>) -> Void) {
     if let delay = delay {
       let deadline = DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(delay * 1000))
       DispatchQueue.main.asyncAfter(deadline: deadline) { [weak self] in

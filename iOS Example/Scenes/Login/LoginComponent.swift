@@ -10,30 +10,44 @@ import Foundation
 import Core
 
 enum LoginAction: Action {
-  case tick
   case verifyOTP(String)
 }
 
 struct LoginState: State {
   var isLoading = false
   var timerStatus: TimerStatus = .idle
-  var result: Result<Void>?
+  var result: Result<Void, Error>?
 }
 
-class LoginComponent: Component<LoginState> {
+enum LoginError: Error {
+  case timeout
+}
+
+final class LoginComponent: Component<LoginState> {
   
-  let service: OTPService
+  private let tickProducer: TickProducerProtocol
+  private let service: OTPService
+  private let router: LoginRouterProtocol
+  private let tickInterval: TimeInterval = 1.0
   
-  init(service: OTPService) {
+  init(tickProducer: TickProducerProtocol, service: OTPService, router: LoginRouterProtocol) {
+    self.tickProducer = tickProducer
     self.service = service
+    self.router = router
     super.init(state: LoginState())
+  }
+  
+  override func start(with dispatcher: DispatcherProtocol) {
+    super.start(with: dispatcher)
+    tickProducer.setHandler { [weak self] in
+      self?.tick()
+    }
+    tickProducer.start(interval: tickInterval)
   }
   
   override func process(_ action: Action) {
     guard let action = action as? LoginAction else { return }
     switch action {
-    case .tick:
-      tick()
     case .verifyOTP(let code):
       verifyOTP(code)
     }
@@ -41,20 +55,21 @@ class LoginComponent: Component<LoginState> {
   
   private func tick() {
     var state = self.state
+    
     switch state.timerStatus {
     case .idle:
-      state.timerStatus = .active(seconds: 60)
+      state.timerStatus = .active(remaining: 10, interval: tickInterval)
+      commit(state)
     default:
-      do {
-        try state.timerStatus.tick()
-      } catch {
-        state.result = .failure(error)
+      state.timerStatus.tick()
+      if state.timerStatus == .finished {
+        state.result = .failure(LoginError.timeout)
         commit(state)
-        print("pop back")
-        return
+        router.route(to: .back)
+      } else {
+        commit(state)
       }
     }
-    commit(state)
   }
   
   private func verifyOTP(_ code: String) {
@@ -62,17 +77,16 @@ class LoginComponent: Component<LoginState> {
     state.isLoading = true
     commit(state)
     service.verifyOTP { [weak self] (result) in
-      guard let strongSelf = self else { return }
+      guard let self = self else { return }
       state.isLoading = false
-      state.timerStatus = .finished
       state.result = result
       switch result {
       case .success():
-        strongSelf.commit(state)
-        print("push home")
+        self.commit(state)
+        self.router.route(to: .home)
       case .failure(let error):
         print(error)
-        strongSelf.commit(state)
+        self.commit(state)
       }
     }
   }
@@ -80,33 +94,24 @@ class LoginComponent: Component<LoginState> {
 
 // MARK: - Helpers
 
-enum Result<Value> {
-  case success(Value)
-  case failure(Error)
-}
-
-extension Result where Value == Void {
-  static let success: Result<Void> = .success(())
+extension Result where Success == Void {
+  static var success: Result<Void, Error> { .success(()) }
 }
 
 enum TimerStatus {
   
-  enum Error: Swift.Error {
-    case expired
-  }
-  
   case idle
-  case active(seconds: TimeInterval)
+  case active(remaining: TimeInterval, interval: TimeInterval)
   case finished
   
-  mutating func tick() throws {
+  mutating func tick() {
     switch self {
-    case .active(seconds: let seconds):
-      if seconds > 1.0 {
-        self = .active(seconds: seconds - 1.0)
+    case .active(remaining: var remaining, interval: let interval):
+      if remaining >= interval {
+        remaining -= interval
+        self = remaining < interval ? .finished : .active(remaining: remaining, interval: interval)
       } else {
         self = .finished
-        throw Error.expired
       }
     default:
       break
@@ -120,8 +125,8 @@ extension TimerStatus: Equatable {
     switch (a, b) {
     case (.idle, .idle):
       return true
-    case (.active(let seconds1), .active(let seconds2)):
-      return seconds1 == seconds2
+    case (.active(let remaining1, let interval1), .active(let remaining2, let interval2)):
+      return remaining1 == remaining2 && interval1 == interval2
     case (.finished, .finished):
       return true
     default:

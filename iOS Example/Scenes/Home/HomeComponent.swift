@@ -17,7 +17,10 @@ struct HomeState: State { }
 
 class HomeComponent: Component<HomeState> {
   
-  init() {
+  private let router: HomeRouterProtocol
+  
+  init(router: HomeRouterProtocol) {
+    self.router = router
     super.init(state: HomeState())
   }
   
@@ -25,7 +28,7 @@ class HomeComponent: Component<HomeState> {
     guard let action = action as? HomeAction else { return }
     switch action {
     case .logout:
-      print("logout")
+      router.route(to: .login)
     }
   }
 }

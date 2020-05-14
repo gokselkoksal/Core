@@ -9,22 +9,28 @@
 import UIKit
 import Core
 
-class LoginViewController: UIViewController {
+enum LoginViewUpdate {
+  case setLoading(Bool)
+  case updateTimer(TimerStatus)
+}
+
+protocol LoginView {
+  var driver: AnyDriver<LoginViewUpdate>! { get set }
+}
+
+// MARK: Implementation
+
+class LoginViewController: UIViewController, LoginView {
   
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var otpTextField: UITextField!
   
-  var dispatcher: Dispatcher!
-  var component: AnyComponent<LoginState>!
-  private var stateSubscription: SubscriptionProtocol?
+  var driver: AnyDriver<LoginViewUpdate>!
   
-  private var timer: Timer?
-  
-  static func instantiate(with dispatcher: Dispatcher, component: AnyComponent<LoginState>) -> LoginViewController {
+  static func instantiate(with driver: AnyDriver<LoginViewUpdate>!) -> LoginViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! LoginViewController
-    vc.dispatcher = dispatcher
-    vc.component = component
+    vc.driver = driver
     return vc
   }
   
@@ -32,49 +38,29 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     title = "Login"
     
-    stateSubscription = component.subscribe(on: .main) { [weak self] (state) in
-      self?.update(with: state)
+    driver.start(on: .main) { [weak self] (update) in
+      self?.handleUpdate(update)
     }
-    component.start(with: dispatcher)
-    
-    dispatcher.dispatch(LoginAction.tick) // Activate with first tick.
-    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-      self.dispatcher.dispatch(LoginAction.tick)
-    }
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    timer?.invalidate()
-    timer = nil
   }
   
   @IBAction func submitTapped(_ sender: UIButton) {
     guard let code = otpTextField.text else { return }
-    dispatcher.dispatch(LoginAction.verifyOTP(code))
+    driver.dispatch(LoginAction.verifyOTP(code))
   }
   
-  func update(with state: LoginState) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = state.isLoading
-    
-    switch state.timerStatus {
-    case .idle:
-      timerLabel.isHidden = true
-    case .active(seconds: let seconds):
-      timerLabel.isHidden = false
-      timerLabel.text = "\(UInt(seconds)) seconds remaning..."
-    case .finished:
-      timer?.invalidate()
-      timer = nil
-      timerLabel.isHidden = true
-    }
-    
-    if let result = state.result {
-      switch result {
-      case .success():
-        print("Success!") // TODO: Replace with navigator action.
-      case .failure(let error):
-        print("Failure! \(error)") // TODO: Alert.
+  private func handleUpdate(_ update: LoginViewUpdate) {
+    switch update {
+    case .setLoading(let isLoading):
+      UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
+    case .updateTimer(let timerStatus):
+      switch timerStatus {
+      case .idle:
+        timerLabel.isHidden = true
+      case .active(remaining: let remaining, interval: _):
+        timerLabel.isHidden = false
+        timerLabel.text = "\(UInt(remaining)) seconds remaning..."
+      case .finished:
+        timerLabel.isHidden = true
       }
     }
   }

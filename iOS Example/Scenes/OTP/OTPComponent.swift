@@ -15,15 +15,17 @@ enum OTPAction: Action {
 
 struct OTPState: State {
   var isLoading = false
-  var result: Result<Void>?
+  var result: Result<Void, Error>?
 }
 
 class OTPComponent: Component<OTPState> {
   
   let service: OTPService
+  let router: OTPRouterProtocol
   
-  init(service: OTPService) {
+  init(service: OTPService, router: OTPRouterProtocol) {
     self.service = service
+    self.router = router
     super.init(state: OTPState())
   }
   
@@ -46,7 +48,7 @@ class OTPComponent: Component<OTPState> {
       switch result {
       case .success():
         self.commit(state)
-        print("push login")
+        self.router.route(to: .login)
       default:
         self.commit(state)
       }

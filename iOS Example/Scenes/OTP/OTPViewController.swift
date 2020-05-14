@@ -9,19 +9,26 @@
 import UIKit
 import Core
 
-class OTPViewController: UIViewController {
+enum OTPViewUpdate {
+  case setLoading(Bool)
+}
+
+protocol OTPView {
+  var driver: AnyDriver<OTPViewUpdate>! { get set }
+}
+
+// MARK: - Implementation
+
+class OTPViewController: UIViewController, OTPView {
   
   @IBOutlet weak var phoneNumberField: UITextField!
   
-  var dispatcher: Dispatcher!
-  var component: AnyComponent<OTPState>!
-  private var stateSubscription: SubscriptionProtocol?
+  var driver: AnyDriver<OTPViewUpdate>!
   
-  static func instantiate(with dispatcher: Dispatcher, component: AnyComponent<OTPState>) -> OTPViewController {
+  static func instantiate(with driver: AnyDriver<OTPViewUpdate>) -> OTPViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! OTPViewController
-    vc.dispatcher = dispatcher
-    vc.component = component
+    vc.driver = driver
     return vc
   }
   
@@ -30,26 +37,20 @@ class OTPViewController: UIViewController {
     title = "Login"
     phoneNumberField.text = "+90530999XXXX"
     
-    component.start(with: dispatcher)
-    stateSubscription = component.subscribe { [weak self] (state) in
-      self?.update(with: state)
+    driver.start(on: .main) { [weak self] (update) in
+      self?.handleUpdate(update)
     }
   }
   
   @IBAction func sendOTPTapped(_ sender: UIButton) {
     guard let phoneNumber = phoneNumberField.text else { return }
-    dispatcher.dispatch(OTPAction.requestOTP(phoneNumber: phoneNumber))
+    driver.dispatch(OTPAction.requestOTP(phoneNumber: phoneNumber))
   }
   
-  func update(with state: OTPState) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = state.isLoading
-    if let result = state.result {
-      switch result {
-      case .failure(let error):
-        print(error) // TODO: Alert.
-      default:
-        break
-      }
+  private func handleUpdate(_ update: OTPViewUpdate) {
+    switch update {
+    case .setLoading(let isLoading):
+      UIApplication.shared.isNetworkActivityIndicatorVisible = isLoading
     }
   }
 }

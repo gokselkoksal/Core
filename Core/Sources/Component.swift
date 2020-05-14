@@ -12,7 +12,7 @@ public protocol ComponentProtocol: Subscribable where Value == StateType {
   associatedtype StateType: State
   
   var state: StateType { get }
-  func start(with dispatcher: Dispatcher)
+  func start(with dispatcher: DispatcherProtocol)
 }
 
 open class Component<StateType: State>: ComponentProtocol {
@@ -28,7 +28,7 @@ open class Component<StateType: State>: ComponentProtocol {
     self.actionQueue = actionQueue
   }
   
-  public func start(with dispatcher: Dispatcher) {
+  open func start(with dispatcher: DispatcherProtocol) {
     actionSubscription = dispatcher.subscribe(on: actionQueue, handler: { [weak self] (action) in
       self?.process(action)
     })
@@ -68,7 +68,7 @@ public final class AnyComponent<StateType: State>: ComponentProtocol {
     self.component = AnyComponentBox(component)
   }
   
-  public func start(with dispatcher: Dispatcher) {
+  public func start(with dispatcher: DispatcherProtocol) {
     component.start(with: dispatcher)
   }
   
@@ -89,7 +89,7 @@ private final class AnyComponentBox<T: ComponentProtocol>: AnyComponentBase<T.St
     self.component = component
   }
   
-  override func start(with dispatcher: Dispatcher) {
+  override func start(with dispatcher: DispatcherProtocol) {
     component.start(with: dispatcher)
   }
   
@@ -104,7 +104,7 @@ private class AnyComponentBase<StateType: State>: ComponentProtocol {
     fatalError()
   }
   
-  func start(with dispatcher: Dispatcher) {
+  func start(with dispatcher: DispatcherProtocol) {
     fatalError()
   }
   

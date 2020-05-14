@@ -9,15 +9,24 @@
 import UIKit
 import Core
 
-class HomeViewController: UIViewController {
+enum HomeViewUpdate {
+  case noop
+}
+
+protocol HomeViewProtocol {
+  var driver: AnyDriver<HomeViewUpdate>! { get set }
+}
+
+// MARK: - Implementation
+
+class HomeViewController: UIViewController, HomeViewProtocol {
   
-  var dispatcher: Dispatcher!
-  var component: HomeComponent!
+  var driver: AnyDriver<HomeViewUpdate>!
   private var stateSubscription: SubscriptionProtocol?
   
-  static func instantiate(with component: HomeComponent) -> HomeViewController {
+  static func instantiate(with driver: AnyDriver<HomeViewUpdate>) -> HomeViewController {
     let vc = HomeViewController()
-    vc.component = component
+    vc.driver = driver
     return vc
   }
   
@@ -32,17 +41,16 @@ class HomeViewController: UIViewController {
       action: #selector(logoutTapped)
     )
     navigationItem.leftBarButtonItem = logoutButton
-    stateSubscription = component.subscribe(on: .main) { [weak self] (state) in
-      self?.update(with: state)
+    driver.start(on: .main) { [weak self] (update) in
+      self?.handleUpdate(update)
     }
-    component.start(with: dispatcher)
   }
   
   @objc private func logoutTapped() {
-    dispatcher.dispatch(HomeAction.logout)
+    driver.dispatch(HomeAction.logout)
   }
   
-  func update(with state: HomeState) {
-    // Update...
+  private func handleUpdate(_ update: HomeViewUpdate) {
+    // Implement...
   }
 }

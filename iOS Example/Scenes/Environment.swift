@@ -8,9 +8,16 @@
 
 import Core
 
-let dispatcher = Core()
 let env = Environment()
 
 final class Environment {
+  
+  let dispatcher = Dispatcher(
+    middlewares: [
+      LoggerMiddleware(id: "1"),
+      LoggerMiddleware(id: "2"),
+      LoggerMiddleware(id: "3")
+    ]
+  )
   public let otpService = MockOTPService(delay: 1.5, result: .success)
 }

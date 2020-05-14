@@ -8,7 +8,25 @@
 
 import Foundation
 
+public typealias DispatchFunction = (Action) -> Void
+
 public protocol Middleware {
-  func willProcess(_ action: Action)
-  func didProcess(_ action: Action)
+  func overrideDispatch(_ dispatch: @escaping DispatchFunction) -> DispatchFunction
+}
+
+public final class LoggerMiddleware: Middleware {
+  
+  private let id: String
+  
+  public init(id: String) {
+    self.id = id
+  }
+  
+  public func overrideDispatch(_ dispatch: @escaping DispatchFunction) -> DispatchFunction {
+    return { action in
+      print(self.id, ": will dispatch", action)
+      dispatch(action)
+      print(self.id, ": did dispatch", action)
+    }
+  }
 }

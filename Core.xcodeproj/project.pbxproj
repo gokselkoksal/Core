@@ -26,26 +26,37 @@
 		62170E881F0818BA00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62170E891F0818BB00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62170E8A1F0818BC00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B2349246CD24200E5CB8F /* HomeDriver.swift */; };
+		621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234B246CD26200E5CB8F /* HomeRouter.swift */; };
+		621B234F246CD4CD00E5CB8F /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */; };
+		6250DDF7246CA5EC0004CCEE /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF6246CA5EC0004CCEE /* Driver.swift */; };
+		6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF8246CCBC30004CCEE /* OTPDriver.swift */; };
+		6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */; };
+		6250DDFD246CCCB40004CCEE /* LoginDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFC246CCCB40004CCEE /* LoginDriver.swift */; };
+		6250DDFF246CCCC00004CCEE /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFE246CCCC00004CCEE /* LoginRouter.swift */; };
+		6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */; };
+		625520952471D12C00F57F09 /* TickProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520942471D12C00F57F09 /* TickProducer.swift */; };
+		625520972471D21E00F57F09 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
 		62859B411F0983F40040A059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B401F0983F40040A059 /* LoginViewController.swift */; };
 		62859B431F0984000040A059 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B421F0984000040A059 /* LoginComponent.swift */; };
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
 		62BB28BE1F07FD2300B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
 		62BB28C01F07FD2300B018AB /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62BB28E51F08057700B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
-		62BB28E61F08057700B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
+		62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB28E71F08057700B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB28E81F08057700B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB28F91F080FDA00B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28F01F080FDA00B018AB /* Core.framework */; };
 		62BB29151F08101500B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB290C1F08101500B018AB /* Core.framework */; };
-		62BB293D1F08159000B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
+		62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB293E1F08159000B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
 		62BB293F1F08159000B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29401F08159000B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
-		62BB29451F08159100B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
+		62BB29451F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB29461F08159100B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
 		62BB29471F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29481F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
-		62BB294D1F08159100B018AB /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Core.swift */; };
+		62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB294E1F08159100B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
 		62BB294F1F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29501F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
@@ -115,8 +126,19 @@
 		6212FFB5246B2BA600E29FAE /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
 		6212FFBA246B2D3900E29FAE /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		6212FFBB246B2D3900E29FAE /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
+		621B2349246CD24200E5CB8F /* HomeDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDriver.swift; sourceTree = "<group>"; };
+		621B234B246CD26200E5CB8F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		6250DDF6246CA5EC0004CCEE /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		6250DDF8246CCBC30004CCEE /* OTPDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPDriver.swift; sourceTree = "<group>"; };
+		6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
+		6250DDFC246CCCB40004CCEE /* LoginDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDriver.swift; sourceTree = "<group>"; };
+		6250DDFE246CCCC00004CCEE /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBackgroundTimeRecorder.swift; sourceTree = "<group>"; };
+		625520942471D12C00F57F09 /* TickProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickProducer.swift; sourceTree = "<group>"; };
+		625520962471D21E00F57F09 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		627912E21F26A04F0013195A /* CoreArchitecture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreArchitecture.podspec; sourceTree = SOURCE_ROOT; };
 		62859B401F0983F40040A059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		62859B421F0984000040A059 /* LoginComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
@@ -127,7 +149,7 @@
 		62BB28BD1F07FD2300B018AB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		62BB28BF1F07FD2300B018AB /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		62BB28DF1F08057700B018AB /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
-		62BB28E01F08057700B018AB /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		62BB28E01F08057700B018AB /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		62BB28E11F08057700B018AB /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		62BB28E21F08057700B018AB /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		62BB28F01F080FDA00B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,11 +251,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621B234D246CD4C200E5CB8F /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		6255208C2471D0AF00F57F09 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				625520942471D12C00F57F09 /* TickProducer.swift */,
+				6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */,
+				625520962471D21E00F57F09 /* Clock.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		629FD21C2460755A00E8AEA8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				629FD21E246075A500E8AEA8 /* Login */,
+				621B234D246CD4C200E5CB8F /* Builders */,
 				629FD21D2460759C00E8AEA8 /* OTP */,
+				629FD21E246075A500E8AEA8 /* Login */,
 				629FD21F246075AB00E8AEA8 /* Home */,
 				62C85E021F097C93005B60BA /* Environment.swift */,
 			);
@@ -244,8 +285,10 @@
 			isa = PBXGroup;
 			children = (
 				8FD9EF021F1905F40051CEFD /* OTPService.swift */,
-				62C85E001F097C63005B60BA /* OTPComponent.swift */,
 				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
+				6250DDF8246CCBC30004CCEE /* OTPDriver.swift */,
+				62C85E001F097C63005B60BA /* OTPComponent.swift */,
+				6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */,
 			);
 			path = OTP;
 			sourceTree = "<group>";
@@ -253,8 +296,10 @@
 		629FD21E246075A500E8AEA8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				62859B421F0984000040A059 /* LoginComponent.swift */,
 				62859B401F0983F40040A059 /* LoginViewController.swift */,
+				6250DDFC246CCCB40004CCEE /* LoginDriver.swift */,
+				62859B421F0984000040A059 /* LoginComponent.swift */,
+				6250DDFE246CCCC00004CCEE /* LoginRouter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -262,8 +307,10 @@
 		629FD21F246075AB00E8AEA8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
 				8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */,
+				621B2349246CD24200E5CB8F /* HomeDriver.swift */,
+				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
+				621B234B246CD26200E5CB8F /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -329,10 +376,11 @@
 			isa = PBXGroup;
 			children = (
 				62BB28DA1F08055E00B018AB /* Helpers */,
-				62BB28E01F08057700B018AB /* Core.swift */,
+				62BB28E01F08057700B018AB /* Dispatcher.swift */,
 				62BB28DF1F08057700B018AB /* Component.swift */,
 				62BB28E11F08057700B018AB /* Definitions.swift */,
 				62BB28E21F08057700B018AB /* Middleware.swift */,
+				6250DDF6246CA5EC0004CCEE /* Driver.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -381,8 +429,9 @@
 		62C85DED1F0979B1005B60BA /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				62C85DEE1F0979B1005B60BA /* AppDelegate.swift */,
+				6255208C2471D0AF00F57F09 /* Helpers */,
 				629FD21C2460755A00E8AEA8 /* Scenes */,
+				62C85DEE1F0979B1005B60BA /* AppDelegate.swift */,
 				62C85DF21F0979B1005B60BA /* Main.storyboard */,
 				62C85DF51F0979B1005B60BA /* Assets.xcassets */,
 				62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */,
@@ -771,9 +820,10 @@
 				6212FFC0246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB6246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
 				62BB28E51F08057700B018AB /* Component.swift in Sources */,
-				62BB28E61F08057700B018AB /* Core.swift in Sources */,
+				62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */,
 				6212FFB1246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB28E81F08057700B018AB /* Middleware.swift in Sources */,
+				6250DDF7246CA5EC0004CCEE /* Driver.swift in Sources */,
 				6212FFBC246B2D3900E29FAE /* Weak.swift in Sources */,
 				62BB28E71F08057700B018AB /* Definitions.swift in Sources */,
 			);
@@ -793,7 +843,7 @@
 			files = (
 				6212FFC1246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB7246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
-				62BB293D1F08159000B018AB /* Core.swift in Sources */,
+				62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */,
 				62BB293E1F08159000B018AB /* Component.swift in Sources */,
 				6212FFB2246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29401F08159000B018AB /* Middleware.swift in Sources */,
@@ -816,7 +866,7 @@
 			files = (
 				6212FFC2246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB8246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
-				62BB29451F08159100B018AB /* Core.swift in Sources */,
+				62BB29451F08159100B018AB /* Dispatcher.swift in Sources */,
 				62BB29461F08159100B018AB /* Component.swift in Sources */,
 				6212FFB3246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29481F08159100B018AB /* Middleware.swift in Sources */,
@@ -839,7 +889,7 @@
 			files = (
 				6212FFC3246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB9246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
-				62BB294D1F08159100B018AB /* Core.swift in Sources */,
+				62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */,
 				62BB294E1F08159100B018AB /* Component.swift in Sources */,
 				6212FFB4246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29501F08159100B018AB /* Middleware.swift in Sources */,
@@ -852,14 +902,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */,
+				6250DDFD246CCCB40004CCEE /* LoginDriver.swift in Sources */,
 				62C85DF11F0979B1005B60BA /* OTPViewController.swift in Sources */,
 				8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */,
+				625520972471D21E00F57F09 /* Clock.swift in Sources */,
+				621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */,
 				62C85DEF1F0979B1005B60BA /* AppDelegate.swift in Sources */,
 				62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */,
 				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
+				621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */,
 				62C85E031F097C93005B60BA /* Environment.swift in Sources */,
+				6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */,
+				625520952471D12C00F57F09 /* TickProducer.swift in Sources */,
 				8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */,
+				6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */,
+				621B234F246CD4CD00E5CB8F /* LoginBuilder.swift in Sources */,
+				6250DDFF246CCCC00004CCEE /* LoginRouter.swift in Sources */,
 				62859B431F0984000040A059 /* LoginComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
