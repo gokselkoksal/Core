@@ -71,32 +71,32 @@ private class AnyDriverBase<ViewUpdate>: DriverProtocol {
   }
 }
 
-open class Driver<StateType: State, ViewUpdate>: DriverProtocol {
+open class Driver<ModuleOutput, ViewUpdate>: DriverProtocol {
   
   private let dispatcher: DispatcherProtocol
-  private let component: AnyComponent<StateType>
+  private let module: AnyModule<ModuleOutput>
   private var stateSubscription: SubscriptionProtocol?
   
   private var updateHandler: ((ViewUpdate) -> Void)?
   
-  public init(dispatcher: DispatcherProtocol, component: AnyComponent<StateType>) {
+  public init(dispatcher: DispatcherProtocol, component: AnyModule<ModuleOutput>) {
     self.dispatcher = dispatcher
-    self.component = component
+    self.module = component
   }
   
   public func start(on queue: DispatchQueue?, handler: @escaping (ViewUpdate) -> Void) {
     updateHandler = handler
-    stateSubscription = component.subscribe(on: queue) { [weak self] (state) in
+    stateSubscription = module.subscribe(on: queue) { [weak self] (state) in
       self?.update(with: state)
     }
-    component.start(with: dispatcher)
+    module.start(with: dispatcher)
   }
   
   public final func dispatch(_ action: Action) {
     dispatcher.dispatch(action)
   }
   
-  open func update(with state: StateType) {
+  open func update(with state: ModuleOutput) {
     // Subclasses should override.
   }
   

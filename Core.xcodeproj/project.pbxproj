@@ -38,26 +38,26 @@
 		625520952471D12C00F57F09 /* TickProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520942471D12C00F57F09 /* TickProducer.swift */; };
 		625520972471D21E00F57F09 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
 		62859B411F0983F40040A059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B401F0983F40040A059 /* LoginViewController.swift */; };
-		62859B431F0984000040A059 /* LoginComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B421F0984000040A059 /* LoginComponent.swift */; };
+		62859B431F0984000040A059 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B421F0984000040A059 /* LoginModule.swift */; };
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
 		62BB28BE1F07FD2300B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
 		62BB28C01F07FD2300B018AB /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62BB28E51F08057700B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
+		62BB28E51F08057700B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
 		62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB28E71F08057700B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB28E81F08057700B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB28F91F080FDA00B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28F01F080FDA00B018AB /* Core.framework */; };
 		62BB29151F08101500B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB290C1F08101500B018AB /* Core.framework */; };
 		62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
-		62BB293E1F08159000B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
+		62BB293E1F08159000B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
 		62BB293F1F08159000B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29401F08159000B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB29451F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
-		62BB29461F08159100B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
+		62BB29461F08159100B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
 		62BB29471F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29481F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
-		62BB294E1F08159100B018AB /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Component.swift */; };
+		62BB294E1F08159100B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
 		62BB294F1F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29501F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB29531F0815A100B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
@@ -70,7 +70,7 @@
 		62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E001F097C63005B60BA /* OTPComponent.swift */; };
 		62C85E031F097C93005B60BA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* Environment.swift */; };
 		8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */; };
-		8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */; };
+		8FD9EEF01F18F8520051CEFD /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeModule.swift */; };
 		8FD9EEF81F1905120051CEFD /* iOSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */; };
 		8FD9EEFA1F1905120051CEFD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
 		8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EF021F1905F40051CEFD /* OTPService.swift */; };
@@ -141,14 +141,14 @@
 		625520962471D21E00F57F09 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		627912E21F26A04F0013195A /* CoreArchitecture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreArchitecture.podspec; sourceTree = SOURCE_ROOT; };
 		62859B401F0983F40040A059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		62859B421F0984000040A059 /* LoginComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginComponent.swift; sourceTree = "<group>"; };
+		62859B421F0984000040A059 /* LoginModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
 		62BB28AF1F07FD2300B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28B21F07FD2300B018AB /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		62BB28B31F07FD2300B018AB /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		62BB28B81F07FD2300B018AB /* Core iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28BD1F07FD2300B018AB /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		62BB28BF1F07FD2300B018AB /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		62BB28DF1F08057700B018AB /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		62BB28DF1F08057700B018AB /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		62BB28E01F08057700B018AB /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		62BB28E11F08057700B018AB /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		62BB28E21F08057700B018AB /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		62C85E021F097C93005B60BA /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		8F2052EC1F2B7DA200462C19 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		8FD9EEEF1F18F8520051CEFD /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		8FD9EEF51F1905120051CEFD /* iOS Example Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Example Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD9EEF71F1905120051CEFD /* iOSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSExampleTests.swift; sourceTree = "<group>"; };
 		8FD9EEF91F1905120051CEFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			children = (
 				62859B401F0983F40040A059 /* LoginViewController.swift */,
 				6250DDFC246CCCB40004CCEE /* LoginDriver.swift */,
-				62859B421F0984000040A059 /* LoginComponent.swift */,
+				62859B421F0984000040A059 /* LoginModule.swift */,
 				6250DDFE246CCCC00004CCEE /* LoginRouter.swift */,
 			);
 			path = Login;
@@ -309,7 +309,7 @@
 			children = (
 				8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */,
 				621B2349246CD24200E5CB8F /* HomeDriver.swift */,
-				8FD9EEEF1F18F8520051CEFD /* HomeComponent.swift */,
+				8FD9EEEF1F18F8520051CEFD /* HomeModule.swift */,
 				621B234B246CD26200E5CB8F /* HomeRouter.swift */,
 			);
 			path = Home;
@@ -377,7 +377,7 @@
 			children = (
 				62BB28DA1F08055E00B018AB /* Helpers */,
 				62BB28E01F08057700B018AB /* Dispatcher.swift */,
-				62BB28DF1F08057700B018AB /* Component.swift */,
+				62BB28DF1F08057700B018AB /* Module.swift */,
 				62BB28E11F08057700B018AB /* Definitions.swift */,
 				62BB28E21F08057700B018AB /* Middleware.swift */,
 				6250DDF6246CA5EC0004CCEE /* Driver.swift */,
@@ -819,7 +819,7 @@
 			files = (
 				6212FFC0246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB6246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
-				62BB28E51F08057700B018AB /* Component.swift in Sources */,
+				62BB28E51F08057700B018AB /* Module.swift in Sources */,
 				62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */,
 				6212FFB1246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB28E81F08057700B018AB /* Middleware.swift in Sources */,
@@ -844,7 +844,7 @@
 				6212FFC1246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB7246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
 				62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */,
-				62BB293E1F08159000B018AB /* Component.swift in Sources */,
+				62BB293E1F08159000B018AB /* Module.swift in Sources */,
 				6212FFB2246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29401F08159000B018AB /* Middleware.swift in Sources */,
 				6212FFBD246B2D3900E29FAE /* Weak.swift in Sources */,
@@ -867,7 +867,7 @@
 				6212FFC2246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB8246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
 				62BB29451F08159100B018AB /* Dispatcher.swift in Sources */,
-				62BB29461F08159100B018AB /* Component.swift in Sources */,
+				62BB29461F08159100B018AB /* Module.swift in Sources */,
 				6212FFB3246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29481F08159100B018AB /* Middleware.swift in Sources */,
 				6212FFBE246B2D3900E29FAE /* Weak.swift in Sources */,
@@ -890,7 +890,7 @@
 				6212FFC3246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB9246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
 				62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */,
-				62BB294E1F08159100B018AB /* Component.swift in Sources */,
+				62BB294E1F08159100B018AB /* Module.swift in Sources */,
 				6212FFB4246B2B7700E29FAE /* Atomic.swift in Sources */,
 				62BB29501F08159100B018AB /* Middleware.swift in Sources */,
 				6212FFBF246B2D3900E29FAE /* Weak.swift in Sources */,
@@ -905,7 +905,7 @@
 				6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */,
 				6250DDFD246CCCB40004CCEE /* LoginDriver.swift in Sources */,
 				62C85DF11F0979B1005B60BA /* OTPViewController.swift in Sources */,
-				8FD9EEF01F18F8520051CEFD /* HomeComponent.swift in Sources */,
+				8FD9EEF01F18F8520051CEFD /* HomeModule.swift in Sources */,
 				625520972471D21E00F57F09 /* Clock.swift in Sources */,
 				621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */,
 				62C85DEF1F0979B1005B60BA /* AppDelegate.swift in Sources */,
@@ -920,7 +920,7 @@
 				6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */,
 				621B234F246CD4CD00E5CB8F /* LoginBuilder.swift in Sources */,
 				6250DDFF246CCCC00004CCEE /* LoginRouter.swift in Sources */,
-				62859B431F0984000040A059 /* LoginComponent.swift in Sources */,
+				62859B431F0984000040A059 /* LoginModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

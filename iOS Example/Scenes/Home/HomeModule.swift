@@ -1,5 +1,5 @@
 //
-//  HomeComponent.swift
+//  HomeModule.swift
 //  Core
 //
 //  Created by Goksel Koksal on 14/07/2017.
@@ -13,9 +13,9 @@ enum HomeAction: Action {
   case logout
 }
 
-struct HomeState: State { }
+struct HomeState { }
 
-class HomeComponent: Component<HomeState> {
+class HomeModule: BaseModule<HomeState> {
   
   private let router: HomeRouterProtocol
   

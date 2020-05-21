@@ -13,7 +13,7 @@ final class LoginBuilder {
   static func build() -> LoginViewController {
     let router = LoginRouter()
     let tickProducer = TickProducer()
-    let component = LoginComponent(tickProducer: tickProducer, service: env.otpService, router: router)
+    let component = LoginModule(tickProducer: tickProducer, service: env.otpService, router: router)
     let driver = LoginDriver(dispatcher: env.dispatcher, component: component.eraseToAny())
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -53,6 +53,6 @@ class iOSExampleTests: XCTestCase {
     XCTAssertEqual(stack.count, 3)
     XCTAssert(stack[0] === otpComponent)
     XCTAssert(stack[1] === loginComponent)
-    XCTAssert(stack[2] is HomeComponent)
+    XCTAssert(stack[2] is HomeModule)
   }
 }

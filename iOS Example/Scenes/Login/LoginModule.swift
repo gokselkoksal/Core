@@ -1,5 +1,5 @@
 //
-//  LoginComponent.swift
+//  LoginModule.swift
 //  Core
 //
 //  Created by Göksel Köksal on 02/07/2017.
@@ -13,7 +13,7 @@ enum LoginAction: Action {
   case verifyOTP(String)
 }
 
-struct LoginState: State {
+struct LoginState {
   var isLoading = false
   var timerStatus: TimerStatus = .idle
   var result: Result<Void, Error>?
@@ -23,7 +23,7 @@ enum LoginError: Error {
   case timeout
 }
 
-final class LoginComponent: Component<LoginState> {
+final class LoginModule: BaseModule<LoginState> {
   
   private let tickProducer: TickProducerProtocol
   private let service: OTPService

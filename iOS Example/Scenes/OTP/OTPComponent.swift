@@ -13,12 +13,27 @@ enum OTPAction: Action {
   case requestOTP(phoneNumber: String)
 }
 
-struct OTPState: State {
+struct OTPState {
   var isLoading = false
   var result: Result<Void, Error>?
 }
 
-class OTPComponent: Component<OTPState> {
+class BaseModule<StateType>: Module<StateType> {
+  
+  public private(set) var state: StateType
+  
+  public init(state: StateType, actionQueue: DispatchQueue? = nil) {
+    self.state = state
+    super.init(actionQueue: actionQueue)
+  }
+  
+  public final func commit(_ newState: StateType) {
+    state = newState
+    send(state)
+  }
+}
+
+class OTPComponent: BaseModule<OTPState> {
   
   let service: OTPService
   let router: OTPRouterProtocol
