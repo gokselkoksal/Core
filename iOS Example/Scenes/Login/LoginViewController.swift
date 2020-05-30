@@ -9,7 +9,7 @@
 import UIKit
 import Core
 
-enum LoginViewUpdate {
+enum LoginViewUpdate: Equatable {
   case setLoading(Bool)
   case updateTimer(TimerStatus)
 }
@@ -26,13 +26,6 @@ class LoginViewController: UIViewController, LoginView {
   @IBOutlet weak var otpTextField: UITextField!
   
   var driver: AnyDriver<LoginViewUpdate>!
-  
-  static func instantiate(with driver: AnyDriver<LoginViewUpdate>!) -> LoginViewController {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! LoginViewController
-    vc.driver = driver
-    return vc
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -13,7 +13,8 @@ final class HomeViewBuilder {
     let router = HomeRouter()
     let module = HomeModule(router: router)
     let driver = HomeDriver(dispatcher: env.dispatcher, module: module.eraseToAny())
-    let view = HomeViewController.instantiate(with: driver.eraseToAny())
+    let view = HomeViewController()
+    view.driver = driver.eraseToAny()
     router.presentationContext = view
     return view
   }

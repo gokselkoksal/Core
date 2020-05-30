@@ -12,47 +12,65 @@ import Core
 
 class iOSExampleTests: XCTestCase {
   
+  func testOTPFlow() {
+    let service = MockOTPService(delay: nil, result: .success)
+    let router = MockOTPRouter()
+    let module = OTPModule(service: service, router: router)
+    let driver = OTPDriver(dispatcher: Dispatcher(middlewares: []), module: module.eraseToAny())
+    
+    var updates: [OTPViewUpdate] = []
+    driver.start(on: nil) { (update) in
+      updates.append(update)
+    }
+    
+    driver.dispatch(OTPAction.RequestOTP(phoneNumber: "+353891234567"))
+    XCTAssertEqual(updates.count, 2)
+    XCTAssertEqual(updates[0], OTPViewUpdate.setLoading(true))
+    XCTAssertEqual(updates[1], OTPViewUpdate.setLoading(false))
+    XCTAssertEqual(router.latestDestination, OTPDestination.login)
+  }
+  
   func testLoginFlow() {
-    let otpService = MockOTPService(delay: nil)
-    let otpComponent = OTPModule(service: otpService)
-    let core = Core(rootComponent: otpComponent)
+    let tickProducer = MockTickProducer()
+    let service = MockOTPService(delay: nil, result: .success)
+    let router = MockLoginRouter()
+    let module = LoginModule(tickProducer: tickProducer, service: service, router: router, otpExpirationTime: 10)
+    let driver = LoginDriver(dispatcher: Dispatcher(middlewares: []), module: module.eraseToAny())
     
-    // Request OTP:
-    core.dispatch(OTPAction.requestOTP(phoneNumber: "+905309998877"))
-    
-    // Check if login component is pushed:
-    var stack = core.navigationTree.flatten()
-    XCTAssertEqual(stack.count, 2)
-    XCTAssert(stack[0] === otpComponent)
-    guard let loginComponent = stack[1] as? LoginComponent else {
-      XCTFail("Login component must be available.")
-      return
+    var updates: [LoginViewUpdate] = []
+    driver.start(on: nil) { (update) in
+      updates.append(update)
     }
     
-    // Check if timer is working on login component:
-    core.dispatch(LoginAction.tick)
-    XCTAssertEqual(loginComponent.state.timerStatus, TimerStatus.active(seconds: 60))
+    tickProducer.tick()
+    tickProducer.tick()
+    XCTAssertEqual(updates.count, 4)
+    XCTAssertEqual(updates[0], LoginViewUpdate.setLoading(false)) // TODO: Fix this.
+    XCTAssertEqual(updates[1], LoginViewUpdate.updateTimer(TimerStatus.active(remaining: 10, interval: 1)))
+    XCTAssertEqual(updates[2], LoginViewUpdate.setLoading(false)) // TODO: Fix this.
+    XCTAssertEqual(updates[3], LoginViewUpdate.updateTimer(TimerStatus.active(remaining: 9, interval: 1)))
     
-    // Verify OTP:
-    core.dispatch(LoginAction.verifyOTP("6754"))
-    
-    // Check if OTP verified successfully:
-    if let loginResult = loginComponent.state.result {
-      switch loginResult {
-      case .failure(_):
-        XCTFail("Login result should be success.")
-      default:
-        break
-      }
-    } else {
-      XCTFail("Login state should not be nil.")
-    }
-    
-    // Check if home component is pushed:
-    stack = core.navigationTree.flatten()
-    XCTAssertEqual(stack.count, 3)
-    XCTAssert(stack[0] === otpComponent)
-    XCTAssert(stack[1] === loginComponent)
-    XCTAssert(stack[2] is HomeModule)
+    driver.dispatch(LoginAction.VerifyOTP(code: "1234"))
+    XCTAssertEqual(router.latestDestination, LoginDestination.home)
+  }
+  
+}
+
+private final class MockOTPRouter: OTPRouterProtocol {
+  
+  private(set) var latestDestination: OTPDestination?
+  
+  func route(to destination: OTPDestination) {
+    self.latestDestination = destination
   }
 }
+
+private final class MockLoginRouter: LoginRouterProtocol {
+  
+  private(set) var latestDestination: LoginDestination?
+  
+  func route(to destination: LoginDestination) {
+    self.latestDestination = destination
+  }
+}
+

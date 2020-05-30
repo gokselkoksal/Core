@@ -31,11 +31,13 @@ final class LoginModule: BaseModule<LoginState> {
   private let service: OTPService
   private let router: LoginRouterProtocol
   private let tickInterval: TimeInterval = 1.0
+  private let otpExpirationTime: TimeInterval
   
-  init(tickProducer: TickProducerProtocol, service: OTPService, router: LoginRouterProtocol) {
+  init(tickProducer: TickProducerProtocol, service: OTPService, router: LoginRouterProtocol, otpExpirationTime: TimeInterval) {
     self.tickProducer = tickProducer
     self.service = service
     self.router = router
+    self.otpExpirationTime = otpExpirationTime
     super.init(state: LoginState())
   }
   
@@ -61,7 +63,7 @@ final class LoginModule: BaseModule<LoginState> {
     
     switch state.timerStatus {
     case .idle:
-      state.timerStatus = .active(remaining: 10, interval: tickInterval)
+      state.timerStatus = .active(remaining: otpExpirationTime, interval: tickInterval)
       commit(state)
     default:
       state.timerStatus.tick()

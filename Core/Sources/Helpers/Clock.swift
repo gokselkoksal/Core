@@ -1,9 +1,9 @@
 //
-//  Clock.swift
-//  DropLogic
+//  ActionRecorderMiddleware.swift
+//  iOS Example
 //
-//  Created by Goksel Koksal on 19/11/2018.
-//  Copyright © 2018 Adaptics. All rights reserved.
+//  Created by Göksel Köksal on 31.05.2020.
+//  Copyright © 2020 GK. All rights reserved.
 //
 
 import Foundation
@@ -11,6 +11,8 @@ import Foundation
 public protocol ClockProtocol {
   func now() -> Date
 }
+
+// MARK: - Implementation
 
 public class Clock: ClockProtocol {
   
@@ -20,6 +22,8 @@ public class Clock: ClockProtocol {
     return Date()
   }
 }
+
+// MARK: - Mock
 
 public class MockClock: ClockProtocol {
   
@@ -37,4 +41,3 @@ public class MockClock: ClockProtocol {
     self.date += interval
   }
 }
-

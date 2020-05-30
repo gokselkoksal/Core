@@ -8,9 +8,11 @@
 
 import Foundation
 
+public protocol Action { }
+
 public protocol DispatcherProtocol {
   
-  func dispatch<T: Action>(_ action: T)
+  func dispatch(_ action: Action)
   
   func subscribe(
     on queue: DispatchQueue?,
@@ -35,24 +37,25 @@ public final class Dispatcher: DispatcherProtocol {
   
   private let subscriptionStore: SubscriptionStore<Action>
   private let dispatchFunction: DispatchFunction
+  private let middlewares: [Middleware]
   
   public init(middlewares: [Middleware]) {
     let subscriptionStore = SubscriptionStore<Action>()
     let defaultDispatchFunction: DispatchFunction = { [weak subscriptionStore] action in
-      print("dispatch", action)
       subscriptionStore?.send(action)
     }
     self.subscriptionStore = subscriptionStore
     self.dispatchFunction = middlewares.reversed().reduce(defaultDispatchFunction) { (partialDispatchFunction, middleware) -> DispatchFunction in
       return middleware.overrideDispatch(partialDispatchFunction)
     }
+    self.middlewares = middlewares
   }
   
   public func subscribe(on queue: DispatchQueue?, id: String, handler: @escaping (Action) -> Void) -> SubscriptionProtocol {
     return subscriptionStore.subscribe(on: queue, id: id, handler: handler)
   }
   
-  public func dispatch<T>(_ action: T) where T : Action {
+  public func dispatch(_ action: Action) {
     dispatchFunction(action)
   }
 }

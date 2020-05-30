@@ -8,33 +8,24 @@
 
 import Core
 
+protocol AppAction: CodableAction { }
+
 let env = Environment()
 
 final class Environment {
   
-  let dispatcher = Dispatcher(
+  lazy var dispatcher = Dispatcher(
     middlewares: [
-      LoggerMiddleware(id: "1"),
-      LoggerMiddleware(id: "2"),
-      LoggerMiddleware(id: "3")
+      ActionLoggerMiddleware(),
+      ActionRecorderMiddleware(repository: self.actionRepository, clock: self.clock)
     ]
   )
-  public let otpService = MockOTPService(delay: 1.5, result: .success)
-}
-
-public final class RecorderMiddleware: Middleware {
-  
-  private let recorder: ActionRecoder
-  
-  init(repository: ActionRepositoryProtocol, clock: ClockProtocol) {
-    self.recorder = ActionRecoder(repository: repository, clock: clock)
-  }
-  
-  public func overrideDispatch(_ dispatch: @escaping DispatchFunction) -> DispatchFunction {
-    return dispatch
-  }
-  
-  public func didDispatch<T>(_ action: T) where T : Action {
-    // recorder.record(action)
-  }
+  var clock: Clock { Clock.shared }
+  private(set) lazy var actionRepository = FileBasedActionRepository(decoder: actionDecoder)
+  private(set) lazy var otpService = MockOTPService(delay: 1.5, result: .success)
+  private(set) lazy var actionDecoder: ActionRecordJSONDecoderProtocol = {
+    let decoder = ActionRecordJSONDecoder()
+    registerActions(to: decoder)
+    return decoder
+  }()
 }

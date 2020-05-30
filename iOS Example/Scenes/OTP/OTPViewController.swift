@@ -9,7 +9,7 @@
 import UIKit
 import Core
 
-enum OTPViewUpdate {
+enum OTPViewUpdate: Equatable {
   case setLoading(Bool)
 }
 
@@ -24,13 +24,6 @@ class OTPViewController: UIViewController, OTPView {
   @IBOutlet weak var phoneNumberField: UITextField!
   
   var driver: AnyDriver<OTPViewUpdate>!
-  
-  static func instantiate(with driver: AnyDriver<OTPViewUpdate>) -> OTPViewController {
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! OTPViewController
-    vc.driver = driver
-    return vc
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

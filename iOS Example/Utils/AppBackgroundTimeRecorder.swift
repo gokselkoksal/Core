@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Core
 
 public enum AppBackgroundTimeRecorderEvent: Equatable {
   case appInBackground

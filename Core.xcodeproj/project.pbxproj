@@ -7,6 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620B7A79248487DA009F783E /* CodableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D42482C9B50076F537 /* CodableAction.swift */; };
+		620B7A7A248487DB009F783E /* CodableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D42482C9B50076F537 /* CodableAction.swift */; };
+		620B7A7B248487DB009F783E /* CodableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D42482C9B50076F537 /* CodableAction.swift */; };
+		620B7A7C248487DC009F783E /* CodableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D42482C9B50076F537 /* CodableAction.swift */; };
+		620B7A7D24848806009F783E /* ActionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D22482C5430076F537 /* ActionRecord.swift */; };
+		620B7A7E24848806009F783E /* ActionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D22482C5430076F537 /* ActionRecord.swift */; };
+		620B7A7F24848806009F783E /* ActionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D22482C5430076F537 /* ActionRecord.swift */; };
+		620B7A8024848806009F783E /* ActionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D22482C5430076F537 /* ActionRecord.swift */; };
+		620B7A812484881E009F783E /* ActionRecordJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */; };
+		620B7A822484881E009F783E /* ActionRecordJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */; };
+		620B7A832484881F009F783E /* ActionRecordJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */; };
+		620B7A842484881F009F783E /* ActionRecordJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */; };
+		620B7A8524848820009F783E /* ActionRecordJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */; };
+		620B7A8624848820009F783E /* ActionRecordJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */; };
+		620B7A8724848821009F783E /* ActionRecordJSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */; };
+		620B7A8824848821009F783E /* ActionRecordJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */; };
+		620B7A89248488C5009F783E /* ActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D02482C4E50076F537 /* ActionRepository.swift */; };
+		620B7A8A248488C5009F783E /* InMemoryActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */; };
+		620B7A8B248488C5009F783E /* FileBasedActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */; };
+		620B7A8C248488C5009F783E /* ActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D02482C4E50076F537 /* ActionRepository.swift */; };
+		620B7A8D248488C5009F783E /* InMemoryActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */; };
+		620B7A8E248488C5009F783E /* FileBasedActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */; };
+		620B7A8F248488C6009F783E /* ActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D02482C4E50076F537 /* ActionRepository.swift */; };
+		620B7A90248488C6009F783E /* InMemoryActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */; };
+		620B7A91248488C6009F783E /* FileBasedActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */; };
+		620B7A92248488C7009F783E /* ActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53D02482C4E50076F537 /* ActionRepository.swift */; };
+		620B7A93248488C7009F783E /* InMemoryActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */; };
+		620B7A94248488C7009F783E /* FileBasedActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */; };
+		620B7A9724848953009F783E /* ActionRecorderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */; };
+		620B7A9824848953009F783E /* ActionRecorderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */; };
+		620B7A9924848954009F783E /* ActionRecorderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */; };
+		620B7A9A24848955009F783E /* ActionRecorderMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */; };
+		620B7A9D248489CC009F783E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
+		620B7A9E248489CD009F783E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
+		620B7A9F248489CE009F783E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
+		620B7AA0248489CF009F783E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
+		620B7AA424848C41009F783E /* ActionLoggerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620B7AA324848C41009F783E /* ActionLoggerMiddleware.swift */; };
 		6212FFB1246B2B7700E29FAE /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212FFB0246B2B7700E29FAE /* Atomic.swift */; };
 		6212FFB2246B2B7700E29FAE /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212FFB0246B2B7700E29FAE /* Atomic.swift */; };
 		6212FFB3246B2B7700E29FAE /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212FFB0246B2B7700E29FAE /* Atomic.swift */; };
@@ -29,6 +66,7 @@
 		621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B2349246CD24200E5CB8F /* HomeDriver.swift */; };
 		621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234B246CD26200E5CB8F /* HomeRouter.swift */; };
 		621B234F246CD4CD00E5CB8F /* LoginViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234E246CD4CD00E5CB8F /* LoginViewBuilder.swift */; };
+		622EEEC02484797C00C80060 /* Environment+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622EEEBF2484797C00C80060 /* Environment+Actions.swift */; };
 		6250DDF7246CA5EC0004CCEE /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF6246CA5EC0004CCEE /* Driver.swift */; };
 		6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF8246CCBC30004CCEE /* OTPDriver.swift */; };
 		6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */; };
@@ -36,8 +74,6 @@
 		6250DDFF246CCCC00004CCEE /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFE246CCCC00004CCEE /* LoginRouter.swift */; };
 		6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */; };
 		625520952471D12C00F57F09 /* TickProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520942471D12C00F57F09 /* TickProducer.swift */; };
-		625520972471D21E00F57F09 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
-		626E51B1247A808100B0325A /* ActionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B0247A808100B0325A /* ActionRecorder.swift */; };
 		626E51B3247AB7A500B0325A /* OTPViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B2247AB7A500B0325A /* OTPViewBuilder.swift */; };
 		626E51B5247AC0C900B0325A /* HomeViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B4247AC0C900B0325A /* HomeViewBuilder.swift */; };
 		62859B411F0983F40040A059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B401F0983F40040A059 /* LoginViewController.swift */; };
@@ -47,21 +83,17 @@
 		62BB28C01F07FD2300B018AB /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		62BB28E51F08057700B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
 		62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
-		62BB28E71F08057700B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB28E81F08057700B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB28F91F080FDA00B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28F01F080FDA00B018AB /* Core.framework */; };
 		62BB29151F08101500B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB290C1F08101500B018AB /* Core.framework */; };
 		62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB293E1F08159000B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
-		62BB293F1F08159000B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29401F08159000B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB29451F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB29461F08159100B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
-		62BB29471F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29481F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E01F08057700B018AB /* Dispatcher.swift */; };
 		62BB294E1F08159100B018AB /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28DF1F08057700B018AB /* Module.swift */; };
-		62BB294F1F08159100B018AB /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E11F08057700B018AB /* Definitions.swift */; };
 		62BB29501F08159100B018AB /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28E21F08057700B018AB /* Middleware.swift */; };
 		62BB29531F0815A100B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
 		62BB29541F0815A200B018AB /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB28BD1F07FD2300B018AB /* CoreTests.swift */; };
@@ -125,6 +157,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620B7AA324848C41009F783E /* ActionLoggerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLoggerMiddleware.swift; sourceTree = "<group>"; };
 		6212FFB0246B2B7700E29FAE /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		6212FFB5246B2BA600E29FAE /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
 		6212FFBA246B2D3900E29FAE /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
@@ -134,6 +167,11 @@
 		621B234E246CD4CD00E5CB8F /* LoginViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewBuilder.swift; sourceTree = "<group>"; };
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		622EEEBF2484797C00C80060 /* Environment+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Actions.swift"; sourceTree = "<group>"; };
+		622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecordJSONEncoder.swift; sourceTree = "<group>"; };
+		622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecordJSONDecoder.swift; sourceTree = "<group>"; };
+		622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryActionRepository.swift; sourceTree = "<group>"; };
+		622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBasedActionRepository.swift; sourceTree = "<group>"; };
 		6250DDF6246CA5EC0004CCEE /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		6250DDF8246CCBC30004CCEE /* OTPDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPDriver.swift; sourceTree = "<group>"; };
 		6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
@@ -142,7 +180,10 @@
 		6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBackgroundTimeRecorder.swift; sourceTree = "<group>"; };
 		625520942471D12C00F57F09 /* TickProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickProducer.swift; sourceTree = "<group>"; };
 		625520962471D21E00F57F09 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		626E51B0247A808100B0325A /* ActionRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecorder.swift; sourceTree = "<group>"; };
+		626B53D02482C4E50076F537 /* ActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRepository.swift; sourceTree = "<group>"; };
+		626B53D22482C5430076F537 /* ActionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecord.swift; sourceTree = "<group>"; };
+		626B53D42482C9B50076F537 /* CodableAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableAction.swift; sourceTree = "<group>"; };
+		626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecorderMiddleware.swift; sourceTree = "<group>"; };
 		626E51B2247AB7A500B0325A /* OTPViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewBuilder.swift; sourceTree = "<group>"; };
 		626E51B4247AC0C900B0325A /* HomeViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBuilder.swift; sourceTree = "<group>"; };
 		627912E21F26A04F0013195A /* CoreArchitecture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreArchitecture.podspec; sourceTree = SOURCE_ROOT; };
@@ -156,7 +197,6 @@
 		62BB28BF1F07FD2300B018AB /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		62BB28DF1F08057700B018AB /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		62BB28E01F08057700B018AB /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
-		62BB28E11F08057700B018AB /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		62BB28E21F08057700B018AB /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		62BB28F01F080FDA00B018AB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BB28F81F080FDA00B018AB /* Core macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +297,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620B7A78248487AC009F783E /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				620B7A9524848918009F783E /* Models */,
+				622EEEC124847B6400C80060 /* ActionCoding */,
+				622EEEC724847C7100C80060 /* ActionRepository */,
+				626B53DF248331BE0076F537 /* ActionRecorderMiddleware.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
+		620B7A9524848918009F783E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				626B53D42482C9B50076F537 /* CodableAction.swift */,
+				626B53D22482C5430076F537 /* ActionRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		620B7AA124848BD4009F783E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				62BB28E01F08057700B018AB /* Dispatcher.swift */,
+				62BB28DF1F08057700B018AB /* Module.swift */,
+				62BB28E21F08057700B018AB /* Middleware.swift */,
+				6250DDF6246CA5EC0004CCEE /* Driver.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		620B7AA224848C27009F783E /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				620B7AA324848C41009F783E /* ActionLoggerMiddleware.swift */,
+			);
+			path = Convenience;
+			sourceTree = "<group>";
+		};
 		621B234D246CD4C200E5CB8F /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,15 +346,32 @@
 			path = Builders;
 			sourceTree = "<group>";
 		};
-		6255208C2471D0AF00F57F09 /* Helpers */ = {
+		622EEEC124847B6400C80060 /* ActionCoding */ = {
+			isa = PBXGroup;
+			children = (
+				622EEEC224847B9300C80060 /* ActionRecordJSONEncoder.swift */,
+				622EEEC424847BAE00C80060 /* ActionRecordJSONDecoder.swift */,
+			);
+			path = ActionCoding;
+			sourceTree = "<group>";
+		};
+		622EEEC724847C7100C80060 /* ActionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				626B53D02482C4E50076F537 /* ActionRepository.swift */,
+				622EEEC824847C8E00C80060 /* InMemoryActionRepository.swift */,
+				622EEECA24847CB400C80060 /* FileBasedActionRepository.swift */,
+			);
+			path = ActionRepository;
+			sourceTree = "<group>";
+		};
+		6255208C2471D0AF00F57F09 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				625520942471D12C00F57F09 /* TickProducer.swift */,
 				6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */,
-				625520962471D21E00F57F09 /* Clock.swift */,
-				626E51B0247A808100B0325A /* ActionRecorder.swift */,
 			);
-			path = Helpers;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		629FD21C2460755A00E8AEA8 /* Scenes */ = {
@@ -286,6 +382,7 @@
 				629FD21E246075A500E8AEA8 /* Login */,
 				629FD21F246075AB00E8AEA8 /* Home */,
 				62C85E021F097C93005B60BA /* Environment.swift */,
+				622EEEBF2484797C00C80060 /* Environment+Actions.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -377,6 +474,7 @@
 				6212FFBA246B2D3900E29FAE /* Weak.swift */,
 				6212FFBB246B2D3900E29FAE /* WeakArray.swift */,
 				6212FFB5246B2BA600E29FAE /* SubscriptionStore.swift */,
+				625520962471D21E00F57F09 /* Clock.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -385,11 +483,9 @@
 			isa = PBXGroup;
 			children = (
 				62BB28DA1F08055E00B018AB /* Helpers */,
-				62BB28E01F08057700B018AB /* Dispatcher.swift */,
-				62BB28DF1F08057700B018AB /* Module.swift */,
-				62BB28E11F08057700B018AB /* Definitions.swift */,
-				62BB28E21F08057700B018AB /* Middleware.swift */,
-				6250DDF6246CA5EC0004CCEE /* Driver.swift */,
+				620B7AA124848BD4009F783E /* Core */,
+				620B7AA224848C27009F783E /* Convenience */,
+				620B7A78248487AC009F783E /* Recording */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -438,7 +534,7 @@
 		62C85DED1F0979B1005B60BA /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				6255208C2471D0AF00F57F09 /* Helpers */,
+				6255208C2471D0AF00F57F09 /* Utils */,
 				629FD21C2460755A00E8AEA8 /* Scenes */,
 				62C85DEE1F0979B1005B60BA /* AppDelegate.swift */,
 				62C85DF21F0979B1005B60BA /* Main.storyboard */,
@@ -830,11 +926,20 @@
 				6212FFB6246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
 				62BB28E51F08057700B018AB /* Module.swift in Sources */,
 				62BB28E61F08057700B018AB /* Dispatcher.swift in Sources */,
+				620B7A79248487DA009F783E /* CodableAction.swift in Sources */,
+				620B7A822484881E009F783E /* ActionRecordJSONDecoder.swift in Sources */,
+				620B7AA424848C41009F783E /* ActionLoggerMiddleware.swift in Sources */,
 				6212FFB1246B2B7700E29FAE /* Atomic.swift in Sources */,
+				620B7A9724848953009F783E /* ActionRecorderMiddleware.swift in Sources */,
+				620B7A91248488C6009F783E /* FileBasedActionRepository.swift in Sources */,
 				62BB28E81F08057700B018AB /* Middleware.swift in Sources */,
 				6250DDF7246CA5EC0004CCEE /* Driver.swift in Sources */,
+				620B7A8024848806009F783E /* ActionRecord.swift in Sources */,
+				620B7A9D248489CC009F783E /* Clock.swift in Sources */,
 				6212FFBC246B2D3900E29FAE /* Weak.swift in Sources */,
-				62BB28E71F08057700B018AB /* Definitions.swift in Sources */,
+				620B7A90248488C6009F783E /* InMemoryActionRepository.swift in Sources */,
+				620B7A812484881E009F783E /* ActionRecordJSONEncoder.swift in Sources */,
+				620B7A8F248488C6009F783E /* ActionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,12 +957,20 @@
 			files = (
 				6212FFC1246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB7246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
+				620B7A832484881F009F783E /* ActionRecordJSONEncoder.swift in Sources */,
 				62BB293D1F08159000B018AB /* Dispatcher.swift in Sources */,
+				620B7A94248488C7009F783E /* FileBasedActionRepository.swift in Sources */,
 				62BB293E1F08159000B018AB /* Module.swift in Sources */,
+				620B7A9E248489CD009F783E /* Clock.swift in Sources */,
+				620B7A842484881F009F783E /* ActionRecordJSONDecoder.swift in Sources */,
+				620B7A92248488C7009F783E /* ActionRepository.swift in Sources */,
+				620B7A7A248487DB009F783E /* CodableAction.swift in Sources */,
 				6212FFB2246B2B7700E29FAE /* Atomic.swift in Sources */,
+				620B7A7F24848806009F783E /* ActionRecord.swift in Sources */,
+				620B7A9824848953009F783E /* ActionRecorderMiddleware.swift in Sources */,
 				62BB29401F08159000B018AB /* Middleware.swift in Sources */,
+				620B7A93248488C7009F783E /* InMemoryActionRepository.swift in Sources */,
 				6212FFBD246B2D3900E29FAE /* Weak.swift in Sources */,
-				62BB293F1F08159000B018AB /* Definitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,12 +988,20 @@
 			files = (
 				6212FFC2246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB8246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
+				620B7A8524848820009F783E /* ActionRecordJSONEncoder.swift in Sources */,
 				62BB29451F08159100B018AB /* Dispatcher.swift in Sources */,
+				620B7A8E248488C5009F783E /* FileBasedActionRepository.swift in Sources */,
 				62BB29461F08159100B018AB /* Module.swift in Sources */,
+				620B7A9F248489CE009F783E /* Clock.swift in Sources */,
+				620B7A8624848820009F783E /* ActionRecordJSONDecoder.swift in Sources */,
+				620B7A8C248488C5009F783E /* ActionRepository.swift in Sources */,
+				620B7A7B248487DB009F783E /* CodableAction.swift in Sources */,
 				6212FFB3246B2B7700E29FAE /* Atomic.swift in Sources */,
+				620B7A7D24848806009F783E /* ActionRecord.swift in Sources */,
+				620B7A9924848954009F783E /* ActionRecorderMiddleware.swift in Sources */,
 				62BB29481F08159100B018AB /* Middleware.swift in Sources */,
+				620B7A8D248488C5009F783E /* InMemoryActionRepository.swift in Sources */,
 				6212FFBE246B2D3900E29FAE /* Weak.swift in Sources */,
-				62BB29471F08159100B018AB /* Definitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,12 +1019,20 @@
 			files = (
 				6212FFC3246B2D3900E29FAE /* WeakArray.swift in Sources */,
 				6212FFB9246B2BA600E29FAE /* SubscriptionStore.swift in Sources */,
+				620B7A8724848821009F783E /* ActionRecordJSONEncoder.swift in Sources */,
 				62BB294D1F08159100B018AB /* Dispatcher.swift in Sources */,
+				620B7A8B248488C5009F783E /* FileBasedActionRepository.swift in Sources */,
 				62BB294E1F08159100B018AB /* Module.swift in Sources */,
+				620B7AA0248489CF009F783E /* Clock.swift in Sources */,
+				620B7A8824848821009F783E /* ActionRecordJSONDecoder.swift in Sources */,
+				620B7A89248488C5009F783E /* ActionRepository.swift in Sources */,
+				620B7A7C248487DC009F783E /* CodableAction.swift in Sources */,
 				6212FFB4246B2B7700E29FAE /* Atomic.swift in Sources */,
+				620B7A7E24848806009F783E /* ActionRecord.swift in Sources */,
+				620B7A9A24848955009F783E /* ActionRecorderMiddleware.swift in Sources */,
 				62BB29501F08159100B018AB /* Middleware.swift in Sources */,
+				620B7A8A248488C5009F783E /* InMemoryActionRepository.swift in Sources */,
 				6212FFBF246B2D3900E29FAE /* Weak.swift in Sources */,
-				62BB294F1F08159100B018AB /* Definitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,14 +1046,13 @@
 				626E51B3247AB7A500B0325A /* OTPViewBuilder.swift in Sources */,
 				8FD9EEF01F18F8520051CEFD /* HomeModule.swift in Sources */,
 				626E51B5247AC0C900B0325A /* HomeViewBuilder.swift in Sources */,
-				625520972471D21E00F57F09 /* Clock.swift in Sources */,
+				622EEEC02484797C00C80060 /* Environment+Actions.swift in Sources */,
 				621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */,
 				62C85DEF1F0979B1005B60BA /* AppDelegate.swift in Sources */,
 				62C85E011F097C63005B60BA /* OTPModule.swift in Sources */,
 				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
 				621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */,
-				626E51B1247A808100B0325A /* ActionRecorder.swift in Sources */,
 				62C85E031F097C93005B60BA /* Environment.swift in Sources */,
 				6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */,
 				625520952471D12C00F57F09 /* TickProducer.swift in Sources */,

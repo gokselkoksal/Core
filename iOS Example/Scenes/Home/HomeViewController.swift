@@ -24,12 +24,6 @@ class HomeViewController: UIViewController, HomeViewProtocol {
   var driver: AnyDriver<HomeViewUpdate>!
   private var stateSubscription: SubscriptionProtocol?
   
-  static func instantiate(with driver: AnyDriver<HomeViewUpdate>) -> HomeViewController {
-    let vc = HomeViewController()
-    vc.driver = driver
-    return vc
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Home"
