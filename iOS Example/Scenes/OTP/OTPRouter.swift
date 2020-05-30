@@ -23,7 +23,7 @@ final class OTPRouter: OTPRouterProtocol {
   func route(to destination: OTPDestination) {
     switch destination {
     case .login:
-      let view = LoginBuilder.build()
+      let view = LoginViewBuilder.build()
       presentationContext?.navigationController?.pushViewController(view, animated: true)
     }
   }

@@ -23,7 +23,8 @@ final class HomeRouter: HomeRouterProtocol {
   func route(to destination: HomeDestination) {
     switch destination {
     case .login:
-      presentationContext?.navigationController?.popToRootViewController(animated: true)
+      let view = OTPViewBuilder.build()
+      presentationContext?.navigationController?.setViewControllers([view], animated: false)
     }
   }
 }

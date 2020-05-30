@@ -9,8 +9,10 @@
 import Foundation
 import Core
 
-enum OTPAction: Action {
-  case requestOTP(phoneNumber: String)
+enum OTPAction {
+  struct RequestOTP: AppAction {
+    let phoneNumber: String
+  }
 }
 
 struct OTPState {
@@ -45,10 +47,11 @@ class OTPModule: BaseModule<OTPState> {
   }
   
   override func process(_ action: Action) {
-    guard let action = action as? OTPAction else { return }
     switch action {
-    case .requestOTP(phoneNumber: let phoneNumber):
-      requestOTP(toPhoneNumber: phoneNumber)
+    case let action as OTPAction.RequestOTP:
+      requestOTP(toPhoneNumber: action.phoneNumber)
+    default:
+      break
     }
   }
   

@@ -10,7 +10,7 @@ import Foundation
 
 public protocol DispatcherProtocol {
   
-  func dispatch(_ action: Action)
+  func dispatch<T: Action>(_ action: T)
   
   func subscribe(
     on queue: DispatchQueue?,
@@ -52,7 +52,7 @@ public final class Dispatcher: DispatcherProtocol {
     return subscriptionStore.subscribe(on: queue, id: id, handler: handler)
   }
   
-  public func dispatch(_ action: Action) {
+  public func dispatch<T>(_ action: T) where T : Action {
     dispatchFunction(action)
   }
 }

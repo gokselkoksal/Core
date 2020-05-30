@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
   }
   
   @objc private func logoutTapped() {
-    driver.dispatch(HomeAction.logout)
+    driver.dispatch(HomeAction.Logout())
   }
   
   private func handleUpdate(_ update: HomeViewUpdate) {

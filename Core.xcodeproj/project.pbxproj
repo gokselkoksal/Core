@@ -28,7 +28,7 @@
 		62170E8A1F0818BC00241813 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB28B21F07FD2300B018AB /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B2349246CD24200E5CB8F /* HomeDriver.swift */; };
 		621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234B246CD26200E5CB8F /* HomeRouter.swift */; };
-		621B234F246CD4CD00E5CB8F /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */; };
+		621B234F246CD4CD00E5CB8F /* LoginViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B234E246CD4CD00E5CB8F /* LoginViewBuilder.swift */; };
 		6250DDF7246CA5EC0004CCEE /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF6246CA5EC0004CCEE /* Driver.swift */; };
 		6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDF8246CCBC30004CCEE /* OTPDriver.swift */; };
 		6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */; };
@@ -37,6 +37,9 @@
 		6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */; };
 		625520952471D12C00F57F09 /* TickProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520942471D12C00F57F09 /* TickProducer.swift */; };
 		625520972471D21E00F57F09 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625520962471D21E00F57F09 /* Clock.swift */; };
+		626E51B1247A808100B0325A /* ActionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B0247A808100B0325A /* ActionRecorder.swift */; };
+		626E51B3247AB7A500B0325A /* OTPViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B2247AB7A500B0325A /* OTPViewBuilder.swift */; };
+		626E51B5247AC0C900B0325A /* HomeViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E51B4247AC0C900B0325A /* HomeViewBuilder.swift */; };
 		62859B411F0983F40040A059 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B401F0983F40040A059 /* LoginViewController.swift */; };
 		62859B431F0984000040A059 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62859B421F0984000040A059 /* LoginModule.swift */; };
 		62BB28B91F07FD2300B018AB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB28AF1F07FD2300B018AB /* Core.framework */; };
@@ -67,7 +70,7 @@
 		62C85DF41F0979B1005B60BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF21F0979B1005B60BA /* Main.storyboard */; };
 		62C85DF61F0979B1005B60BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF51F0979B1005B60BA /* Assets.xcassets */; };
 		62C85DF91F0979B1005B60BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62C85DF71F0979B1005B60BA /* LaunchScreen.storyboard */; };
-		62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E001F097C63005B60BA /* OTPComponent.swift */; };
+		62C85E011F097C63005B60BA /* OTPModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E001F097C63005B60BA /* OTPModule.swift */; };
 		62C85E031F097C93005B60BA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C85E021F097C93005B60BA /* Environment.swift */; };
 		8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */; };
 		8FD9EEF01F18F8520051CEFD /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9EEEF1F18F8520051CEFD /* HomeModule.swift */; };
@@ -128,7 +131,7 @@
 		6212FFBB246B2D3900E29FAE /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
 		621B2349246CD24200E5CB8F /* HomeDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDriver.swift; sourceTree = "<group>"; };
 		621B234B246CD26200E5CB8F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		621B234E246CD4CD00E5CB8F /* LoginViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewBuilder.swift; sourceTree = "<group>"; };
 		621BC7811F0816DA00AB5D33 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
 		621BC7821F0816DA00AB5D33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6250DDF6246CA5EC0004CCEE /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -139,6 +142,9 @@
 		6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBackgroundTimeRecorder.swift; sourceTree = "<group>"; };
 		625520942471D12C00F57F09 /* TickProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickProducer.swift; sourceTree = "<group>"; };
 		625520962471D21E00F57F09 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		626E51B0247A808100B0325A /* ActionRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRecorder.swift; sourceTree = "<group>"; };
+		626E51B2247AB7A500B0325A /* OTPViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewBuilder.swift; sourceTree = "<group>"; };
+		626E51B4247AC0C900B0325A /* HomeViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBuilder.swift; sourceTree = "<group>"; };
 		627912E21F26A04F0013195A /* CoreArchitecture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreArchitecture.podspec; sourceTree = SOURCE_ROOT; };
 		62859B401F0983F40040A059 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		62859B421F0984000040A059 /* LoginModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
@@ -169,7 +175,7 @@
 		62C85DF51F0979B1005B60BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62C85DF81F0979B1005B60BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62C85DFA1F0979B1005B60BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62C85E001F097C63005B60BA /* OTPComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPComponent.swift; sourceTree = "<group>"; };
+		62C85E001F097C63005B60BA /* OTPModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPModule.swift; sourceTree = "<group>"; };
 		62C85E021F097C93005B60BA /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		8F2052EC1F2B7DA200462C19 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		8FD9EEED1F18F8450051CEFD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +260,9 @@
 		621B234D246CD4C200E5CB8F /* Builders */ = {
 			isa = PBXGroup;
 			children = (
-				621B234E246CD4CD00E5CB8F /* LoginBuilder.swift */,
+				626E51B2247AB7A500B0325A /* OTPViewBuilder.swift */,
+				621B234E246CD4CD00E5CB8F /* LoginViewBuilder.swift */,
+				626E51B4247AC0C900B0325A /* HomeViewBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 				625520942471D12C00F57F09 /* TickProducer.swift */,
 				6255208D2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift */,
 				625520962471D21E00F57F09 /* Clock.swift */,
+				626E51B0247A808100B0325A /* ActionRecorder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -287,7 +296,7 @@
 				8FD9EF021F1905F40051CEFD /* OTPService.swift */,
 				62C85DF01F0979B1005B60BA /* OTPViewController.swift */,
 				6250DDF8246CCBC30004CCEE /* OTPDriver.swift */,
-				62C85E001F097C63005B60BA /* OTPComponent.swift */,
+				62C85E001F097C63005B60BA /* OTPModule.swift */,
 				6250DDFA246CCC2F0004CCEE /* OTPRouter.swift */,
 			);
 			path = OTP;
@@ -905,20 +914,23 @@
 				6250DDFB246CCC2F0004CCEE /* OTPRouter.swift in Sources */,
 				6250DDFD246CCCB40004CCEE /* LoginDriver.swift in Sources */,
 				62C85DF11F0979B1005B60BA /* OTPViewController.swift in Sources */,
+				626E51B3247AB7A500B0325A /* OTPViewBuilder.swift in Sources */,
 				8FD9EEF01F18F8520051CEFD /* HomeModule.swift in Sources */,
+				626E51B5247AC0C900B0325A /* HomeViewBuilder.swift in Sources */,
 				625520972471D21E00F57F09 /* Clock.swift in Sources */,
 				621B234C246CD26200E5CB8F /* HomeRouter.swift in Sources */,
 				62C85DEF1F0979B1005B60BA /* AppDelegate.swift in Sources */,
-				62C85E011F097C63005B60BA /* OTPComponent.swift in Sources */,
+				62C85E011F097C63005B60BA /* OTPModule.swift in Sources */,
 				8FD9EEEE1F18F8450051CEFD /* HomeViewController.swift in Sources */,
 				62859B411F0983F40040A059 /* LoginViewController.swift in Sources */,
 				621B234A246CD24200E5CB8F /* HomeDriver.swift in Sources */,
+				626E51B1247A808100B0325A /* ActionRecorder.swift in Sources */,
 				62C85E031F097C93005B60BA /* Environment.swift in Sources */,
 				6250DDF9246CCBC30004CCEE /* OTPDriver.swift in Sources */,
 				625520952471D12C00F57F09 /* TickProducer.swift in Sources */,
 				8FD9EF031F1905F40051CEFD /* OTPService.swift in Sources */,
 				6255208E2471D0FD00F57F09 /* AppBackgroundTimeRecorder.swift in Sources */,
-				621B234F246CD4CD00E5CB8F /* LoginBuilder.swift in Sources */,
+				621B234F246CD4CD00E5CB8F /* LoginViewBuilder.swift in Sources */,
 				6250DDFF246CCCC00004CCEE /* LoginRouter.swift in Sources */,
 				62859B431F0984000040A059 /* LoginModule.swift in Sources */,
 			);

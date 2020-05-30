@@ -9,8 +9,10 @@
 import Foundation
 import Core
 
-enum LoginAction: Action {
-  case verifyOTP(String)
+enum LoginAction {
+  struct VerifyOTP: AppAction {
+    let code: String
+  }
 }
 
 struct LoginState {
@@ -46,10 +48,11 @@ final class LoginModule: BaseModule<LoginState> {
   }
   
   override func process(_ action: Action) {
-    guard let action = action as? LoginAction else { return }
     switch action {
-    case .verifyOTP(let code):
-      verifyOTP(code)
+    case let action as LoginAction.VerifyOTP:
+      verifyOTP(action.code)
+    default:
+      break
     }
   }
   

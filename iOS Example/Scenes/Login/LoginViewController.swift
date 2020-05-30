@@ -45,7 +45,7 @@ class LoginViewController: UIViewController, LoginView {
   
   @IBAction func submitTapped(_ sender: UIButton) {
     guard let code = otpTextField.text else { return }
-    driver.dispatch(LoginAction.verifyOTP(code))
+    driver.dispatch(LoginAction.VerifyOTP(code: code))
   }
   
   private func handleUpdate(_ update: LoginViewUpdate) {

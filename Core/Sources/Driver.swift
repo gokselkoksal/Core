@@ -12,7 +12,7 @@ public protocol DriverProtocol: class {
   associatedtype ViewUpdate
   
   func start(on queue: DispatchQueue?, handler: @escaping (ViewUpdate) -> Void)
-  func dispatch(_ action: Action)
+  func dispatch<T: Action>(_ action: T)
 }
 
 public extension DriverProtocol {
@@ -38,7 +38,7 @@ public final class AnyDriver<ViewUpdate>: DriverProtocol {
     driver.start(on: queue, handler: handler)
   }
   
-  public func dispatch(_ action: Action) {
+  public func dispatch<T>(_ action: T) where T : Action {
     driver.dispatch(action)
   }
 }
@@ -55,7 +55,7 @@ private class AnyDriverBox<T: DriverProtocol>: AnyDriverBase<T.ViewUpdate> {
     driver.start(on: queue, handler: handler)
   }
   
-  override func dispatch(_ action: Action) {
+  override func dispatch<T>(_ action: T) where T : Action {
     driver.dispatch(action)
   }
 }
@@ -66,7 +66,7 @@ private class AnyDriverBase<ViewUpdate>: DriverProtocol {
     fatalError()
   }
   
-  func dispatch(_ action: Action) {
+  func dispatch<T>(_ action: T) where T : Action {
     fatalError()
   }
 }
@@ -79,9 +79,9 @@ open class Driver<ModuleOutput, ViewUpdate>: DriverProtocol {
   
   private var updateHandler: ((ViewUpdate) -> Void)?
   
-  public init(dispatcher: DispatcherProtocol, component: AnyModule<ModuleOutput>) {
+  public init(dispatcher: DispatcherProtocol, module: AnyModule<ModuleOutput>) {
     self.dispatcher = dispatcher
-    self.module = component
+    self.module = module
   }
   
   public func start(on queue: DispatchQueue?, handler: @escaping (ViewUpdate) -> Void) {
@@ -92,7 +92,7 @@ open class Driver<ModuleOutput, ViewUpdate>: DriverProtocol {
     module.start(with: dispatcher)
   }
   
-  public final func dispatch(_ action: Action) {
+  public func dispatch<T>(_ action: T) where T : Action {
     dispatcher.dispatch(action)
   }
   

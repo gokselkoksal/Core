@@ -12,6 +12,13 @@ public typealias DispatchFunction = (Action) -> Void
 
 public protocol Middleware {
   func overrideDispatch(_ dispatch: @escaping DispatchFunction) -> DispatchFunction
+  func willDispatch<T: Action>(_ action: T)
+  func didDispatch<T: Action>(_ action: T)
+}
+
+public extension Middleware {
+  func willDispatch<T: Action>(_ action: T) { }
+  func didDispatch<T: Action>(_ action: T) { }
 }
 
 public final class LoggerMiddleware: Middleware {

@@ -9,8 +9,8 @@
 import Foundation
 import Core
 
-enum HomeAction: Action {
-  case logout
+enum HomeAction {
+  struct Logout: AppAction { }
 }
 
 struct HomeState { }
@@ -25,10 +25,11 @@ class HomeModule: BaseModule<HomeState> {
   }
   
   override func process(_ action: Action) {
-    guard let action = action as? HomeAction else { return }
     switch action {
-    case .logout:
+    case is HomeAction.Logout:
       router.route(to: .login)
+    default:
+      break
     }
   }
 }

@@ -26,13 +26,8 @@ final class LoginRouter: LoginRouterProtocol {
     case .back:
       presentationContext?.navigationController?.popViewController(animated: true)
     case .home:
-      let router = HomeRouter()
-      let component = HomeModule(router: router)
-      let driver = HomeDriver(dispatcher: env.dispatcher, component: component.eraseToAny())
-      let view = HomeViewController.instantiate(with: driver.eraseToAny())
-      router.presentationContext = view
-      
-      presentationContext?.navigationController?.pushViewController(view, animated: true)
+      let view = HomeViewBuilder.build()
+      presentationContext?.navigationController?.setViewControllers([view], animated: true)
     }
   }
 }

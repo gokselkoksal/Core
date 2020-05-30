@@ -14,7 +14,7 @@ class iOSExampleTests: XCTestCase {
   
   func testLoginFlow() {
     let otpService = MockOTPService(delay: nil)
-    let otpComponent = OTPComponent(service: otpService)
+    let otpComponent = OTPModule(service: otpService)
     let core = Core(rootComponent: otpComponent)
     
     // Request OTP:

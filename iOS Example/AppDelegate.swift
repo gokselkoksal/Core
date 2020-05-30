@@ -15,12 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    let router = OTPRouter()
-    let component = OTPComponent(service: env.otpService, router: router)
-    let driver = OTPDriver(dispatcher: env.dispatcher, component: component.eraseToAny())
-    let viewController = OTPViewController.instantiate(with: driver.eraseToAny())
-    let navigationController = UINavigationController(rootViewController: viewController)
-    router.presentationContext = viewController
+    let view = OTPViewBuilder.build()
+    let navigationController = UINavigationController(rootViewController: view)
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = navigationController
     window?.makeKeyAndVisible()

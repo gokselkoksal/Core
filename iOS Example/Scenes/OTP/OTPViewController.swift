@@ -44,7 +44,7 @@ class OTPViewController: UIViewController, OTPView {
   
   @IBAction func sendOTPTapped(_ sender: UIButton) {
     guard let phoneNumber = phoneNumberField.text else { return }
-    driver.dispatch(OTPAction.requestOTP(phoneNumber: phoneNumber))
+    driver.dispatch(OTPAction.RequestOTP(phoneNumber: phoneNumber))
   }
   
   private func handleUpdate(_ update: OTPViewUpdate) {

@@ -9,6 +9,9 @@
 import Foundation
 import Core
 
+protocol UserAction: Core.Action { }
+protocol SystemAction: Core.Action { }
+
 final class LoginDriver: Driver<LoginState, LoginViewUpdate> {
   
   override func update(with state: LoginState) {

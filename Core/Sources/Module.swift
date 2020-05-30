@@ -55,8 +55,8 @@ public final class AnyModule<Output>: ModuleProtocol {
   
   private let module: AnyModuleBase<Output>
   
-  public init<T: ModuleProtocol>(_ component: T) where T.Output == Output {
-    self.module = AnyModuleBox(component)
+  public init<T: ModuleProtocol>(_ module: T) where T.Output == Output {
+    self.module = AnyModuleBox(module)
   }
   
   public func start(with dispatcher: DispatcherProtocol) {
@@ -72,8 +72,8 @@ private final class AnyModuleBox<T: ModuleProtocol>: AnyModuleBase<T.Output> {
   
   private let module: T
   
-  init(_ component: T) {
-    self.module = component
+  init(_ module: T) {
+    self.module = module
   }
   
   override func start(with dispatcher: DispatcherProtocol) {
